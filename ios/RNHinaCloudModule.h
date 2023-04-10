@@ -1,13 +1,15 @@
 #import <Foundation/Foundation.h>
+
 #if __has_include(<React/RCTBridgeModule.h>)
 #import <React/RCTBridgeModule.h>
 #else
 #import "RCTBridgeModule.h"
 #endif
 
-extern NSString *const kSAReactNativePluginVersion;
+NS_ASSUME_NONNULL_BEGIN
 
-@interface RNHinaReactNativeLib : NSObject<RCTBridgeModule>
+@interface RNHinaCloudModule : NSObject <RCTBridgeModule>
 
 @end
 
+NS_ASSUME_NONNULL_END
