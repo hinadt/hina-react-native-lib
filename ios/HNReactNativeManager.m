@@ -213,7 +213,7 @@ NSString *const kSAEventElementContentProperty = @"$element_content";
     }
     
     HNBuildOptions *options = [[HNBuildOptions alloc] initWithServerURL:serverURL launchOptions:nil];
-    NSNumber *enableLog = settings[@"show_log"];
+    NSNumber *enableLog = settings[@"enableLog"];
     if ([enableLog isKindOfClass:[NSNumber class]]) {
         options.enableLog = [enableLog boolValue];
     }
@@ -221,11 +221,11 @@ NSString *const kSAEventElementContentProperty = @"$element_content";
     if ([autoTrack isKindOfClass:[NSNumber class]]) {
         options.autoTrackEventType = [autoTrack integerValue];
     }
-    NSNumber *flushInterval = settings[@"flush_interval"];
+    NSNumber *flushInterval = settings[@"flushInterval"];
     if ([flushInterval isKindOfClass:[NSNumber class]]) {
         options.flushInterval = [flushInterval integerValue];
     }
-    NSNumber *flushBulksize = settings[@"flush_bulksize"];
+    NSNumber *flushBulksize = settings[@"flushPendSize"];
     if ([flushBulksize isKindOfClass:[NSNumber class]]) {
         options.flushPendSize = [flushBulksize integerValue];
     }
@@ -233,7 +233,7 @@ NSString *const kSAEventElementContentProperty = @"$element_content";
     if ([enableEncrypt isKindOfClass:[NSNumber class]]) {
         options.enableEncrypt = [enableEncrypt boolValue];
     }
-    NSNumber *enableJavascriptBridge = settings[@"javascript_bridge"];
+    NSNumber *enableJavascriptBridge = settings[@"enableJSBridge"];
     if ([enableJavascriptBridge isKindOfClass:[NSNumber class]]) {
         //        options.enableJavaScriptBridge = [enableJavascriptBridge boolValue];
         options.enableJSBridge = [enableJavascriptBridge boolValue];
@@ -242,6 +242,16 @@ NSString *const kSAEventElementContentProperty = @"$element_content";
     if ([iOSSettings isKindOfClass:[NSDictionary class]] && [iOSSettings[@"max_cache_size"] isKindOfClass:[NSNumber class]]) {
         options.maxCacheSize = [iOSSettings[@"max_cache_size"] integerValue];
     }
+    // add
+    NSDictionary *new_iOSSettings = settings[@"ios"];
+    if ([iOSSettings isKindOfClass:[NSDictionary class]] && [iOSSettings[@"maxCacheSizeForIOS"] isKindOfClass:[NSNumber class]]) {
+        options.maxCacheSize = [iOSSettings[@"maxCacheSizeForIOS"] integerValue];
+    }
+    // add
+    //    NSDictionary *new_androidSettings = settings[@"android"];
+    //    if ([iOSSettings isKindOfClass:[NSDictionary class]] && [iOSSettings[@"maxCacheSizeForAndroid"] isKindOfClass:[NSNumber class]]) {
+    //        options.maxCacheSize = [iOSSettings[@"maxCacheSizeForAndroid"] longValue];
+    //    }
     NSDictionary *visualizedSettings = settings[@"visualized"];
     if ([visualizedSettings isKindOfClass:[NSDictionary class]]) {
         if ([visualizedSettings[@"auto_track"] isKindOfClass:[NSNumber class]]) {

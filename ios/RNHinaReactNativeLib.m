@@ -148,13 +148,15 @@ RCT_EXPORT_METHOD(trackInstallation:(NSString *)event withProperties:(NSDictiona
  *     <Button
  *            title="Button"
  *            onPress={()=>
- *            RNHinaReactNativeLib.login("developer@sensorsdata.cn")}>
+ *            RNHinaReactNativeLib.login("developer@.cn")}>
  *     </Button>
  */
-RCT_EXPORT_METHOD(login:(NSString *)loginId){
+RCT_EXPORT_METHOD(setUserUId:(NSString *)loginId){
     @try {
-        NSDictionary *properties = [HNReactNativeEventProperty eventProperties:nil];
-        [[HinaCloudSDK sharedInstance] login:loginId withProperties:properties];
+//        NSDictionary *properties = [HNReactNativeEventProperty eventProperties:nil];
+//        [[HinaCloudSDK sharedInstance] login:loginId withProperties:properties];
+//        [[HinaCloudSDK sharedInstance] setUserUId:loginId];
+        [[HinaCloudSDK sharedInstance] setUserUId:loginId];
     } @catch (NSException *exception) {
         NSLog(@"[RNHinaCloud] error:%@",exception);
     }
@@ -169,7 +171,7 @@ RCT_EXPORT_METHOD(login:(NSString *)loginId){
  *            RNHinaReactNativeLib.logout()}>
  *     </Button>
  */
-RCT_EXPORT_METHOD(logout){
+RCT_EXPORT_METHOD(cleanUserUId){
     @try {
         //        [[HinaCloudSDK sharedInstance] logout];
         [[HinaCloudSDK sharedInstance] cleanUserUId];
@@ -192,7 +194,7 @@ RCT_EXPORT_METHOD(logout){
  *     <Button
  *            title="Button"
  *            onPress={()=>
- *            RNHinaReactNativeLib.trackViewScreen(null,{"$title":"RN主页","$screen_name":"cn.sensorsdata.demo.RNHome"})}>
+ *            RNHinaReactNativeLib.trackViewScreen(null,{"$title":"RN主页","$screen_name":"cn.hn.demo.RNHome"})}>
  *     </Button>
  *
  *
@@ -216,7 +218,7 @@ RCT_EXPORT_METHOD(trackViewScreen:(NSString *)url withProperties:(NSDictionary *
  *            RNHinaReactNativeLib.set({"sex":"男"})}>
  *     </Button>
  */
-RCT_EXPORT_METHOD(set:(NSDictionary *)profileDict){
+RCT_EXPORT_METHOD(userSet:(NSDictionary *)profileDict){
     @try {
         [[HinaCloudSDK sharedInstance] set:profileDict];
     } @catch (NSException *exception) {
@@ -257,7 +259,7 @@ RCT_EXPORT_METHOD(profileSet:(NSDictionary *)profileDict){
  *            RNHinaReactNativeLib.setOnce({"sex":"男"})}>
  *     </Button>
  */
-RCT_EXPORT_METHOD(setOnce:(NSDictionary *)profileDict){
+RCT_EXPORT_METHOD(userSetOnce:(NSDictionary *)profileDict){
     @try {
         [[HinaCloudSDK sharedInstance] setOnce:profileDict];
     } @catch (NSException *exception) {
@@ -300,7 +302,7 @@ RCT_EXPORT_METHOD(profileSetOnce:(NSDictionary *)profileDict){
  *                 RNHinaReactNativeLib.unset("sex")}>
  *                 </Button>
  */
-RCT_EXPORT_METHOD(unset:(NSString *) profile){
+RCT_EXPORT_METHOD(userUnset:(NSString *) profile){
     @try {
         [[HinaCloudSDK sharedInstance] unset:profile];
     } @catch (NSException *exception) {
@@ -346,7 +348,7 @@ RCT_EXPORT_METHOD(profileUnset:(NSString *) profile){
  *            RNHinaReactNativeLib.increment("money",10)}>
  *     </Button>
  */
-RCT_EXPORT_METHOD(increment:(NSString *)profile by:(nonnull NSNumber *)amount){
+RCT_EXPORT_METHOD(add:(NSString *)profile by:(nonnull NSNumber *)amount){
     @try {
         //  [[HinaCloudSDK sharedInstance] increment:profile by:amount];
         [[HinaCloudSDK sharedInstance] add:profile by:amount];
@@ -371,13 +373,22 @@ RCT_EXPORT_METHOD(increment:(NSString *)profile by:(nonnull NSNumber *)amount){
  *            RNHinaReactNativeLib.profileIncrement("money",10)}>
  *     </Button>
  */
-RCT_EXPORT_METHOD(profileIncrement:(NSString *)profile by:(nonnull NSNumber *)amount){
+//RCT_EXPORT_METHOD(userAdd:(NSString *)profile by:(nonnull NSNumber *)amount){
+//    @try {
+//        [[HinaCloudSDK sharedInstance] add:profile by:amount];
+//    } @catch (NSException *exception) {
+//        NSLog(@"[RNHinaCloud] error:%@",exception);
+//    }
+//}
+
+RCT_EXPORT_METHOD(userAdd:(NSDictionary *)profile){
     @try {
-        [[HinaCloudSDK sharedInstance] add:profile by:amount];
+        [[HinaCloudSDK sharedInstance] add:profile];
     } @catch (NSException *exception) {
         NSLog(@"[RNHinaCloud] error:%@",exception);
     }
 }
+
 /**
  * 导出 append 方法给 RN 使用.
  * <p>
@@ -394,7 +405,7 @@ RCT_EXPORT_METHOD(profileIncrement:(NSString *)profile by:(nonnull NSNumber *)am
  *                   RNHinaReactNativeLib.append("Move",list);}>
  *     </Button>
  */
-RCT_EXPORT_METHOD(append:(NSString *)profile by:(NSArray *)content){
+RCT_EXPORT_METHOD(userAppend:(NSString *)profile by:(NSArray *)content){
     @try {
         NSSet *setCntent = [NSSet setWithArray:content];
         [[HinaCloudSDK sharedInstance] append:profile by:setCntent];
@@ -439,7 +450,7 @@ RCT_EXPORT_METHOD(profileAppend:(NSString *)profile by:(NSArray *)content){
  *                RNHinaReactNativeLib.deleteUser()}>
  *      </Button>
  */
-RCT_EXPORT_METHOD(deleteUser){
+RCT_EXPORT_METHOD(userDelete){
     @try {
         [[HinaCloudSDK sharedInstance] deleteUser];
     } @catch (NSException *exception) {
@@ -505,7 +516,7 @@ RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(getDistinctId){
         }
         if (bestId == nil) {
             [[HinaCloudSDK sharedInstance] resetAnonymousId];
-//            bestId = [HinaCloudSDK sharedInstance].anonymousId;
+            //            bestId = [HinaCloudSDK sharedInstance].anonymousId;
             bestId = [HinaCloudSDK sharedInstance].deviceUId;
         }
         return bestId;
@@ -552,7 +563,7 @@ RCT_EXPORT_METHOD(getDistinctIdPromise:(RCTPromiseResolveBlock)resolve reject:(R
  *       var anonymousId = await RNHinaReactNativeLib.getAnonymousIdPromise()
  *    };
  */
-RCT_EXPORT_METHOD(getAnonymousIdPromise:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject){
+RCT_EXPORT_METHOD(getDeviceUId:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject){
     @try {
         resolve([HinaCloudSDK sharedInstance].deviceUId);
     } @catch (NSException *exception) {
@@ -572,7 +583,7 @@ RCT_EXPORT_METHOD(getAnonymousIdPromise:(RCTPromiseResolveBlock)resolve reject:(
  *            RNHinaReactNativeLib.registerSuperProperties({"Platform":"iOS"})}>
  *     </Button>
  */
-RCT_EXPORT_METHOD(registerSuperProperties:(NSDictionary *)properties){
+RCT_EXPORT_METHOD(registerCommonProperties:(NSDictionary *)properties){
     @try {
         [[HinaCloudSDK sharedInstance] registerSuperProperties:properties];
     } @catch (NSException *exception) {
@@ -649,9 +660,8 @@ RCT_EXPORT_METHOD(flush){
  *                   RNHinaReactNativeLib.deleteAll()}>
  *                   </Button>
  */
-RCT_EXPORT_METHOD(deleteAll){
+RCT_EXPORT_METHOD(clear){
     @try {
-        // [[HinaCloudSDK sharedInstance] deleteAll];
         [[HinaCloudSDK sharedInstance] clear];
     } @catch (NSException *exception) {
         NSLog(@"[RNHinaCloud] error:%@",exception);
@@ -670,11 +680,9 @@ RCT_EXPORT_METHOD(deleteAll){
  *                   RNHinaReactNativeLib.identify("AAA")}>
  *                   </Button>
  */
-RCT_EXPORT_METHOD(identify:(NSString *)anonymousId) {
+RCT_EXPORT_METHOD(setDeviceUId:(NSString *)deviceUId) {
     @try {
-        //        [[HinaCloudSDK sharedInstance] identify:anonymousId];
-        [[HinaCloudSDK sharedInstance] deviceUId:anonymousId];
-        
+        [[HinaCloudSDK sharedInstance] deviceUId:deviceUId];
     } @catch (NSException *exception) {
         NSLog(@"[RNHinaCloud] error:%@",exception);
     }
@@ -826,7 +834,7 @@ RCT_EXPORT_METHOD(getSuperPropertiesPromise:(RCTPromiseResolveBlock)resolve reje
  *  <Button
  *  title="Button"
  *  onPress={()=>
- *  RNHinaReactNativeLib.setServerUrl("https://www.sensorsdata.cn") }>
+ *  RNHinaReactNativeLib.setServerUrl("https://www.hn.cn") }>
  *  </Button>
  */
 RCT_EXPORT_METHOD(setServerUrl:(NSString *)serverUrl) {
@@ -1008,7 +1016,6 @@ RCT_EXPORT_METHOD(isHeatMapEnabledPromise:(RCTPromiseResolveBlock)resolve reject
 
 /**
  * 记录 $AppInstall 事件，用于在 App 首次启动时追踪渠道来源，并设置追踪渠道事件的属性。
- * 这是 Sensors Analytics 进阶功能，请参考文档 https://sensorsdata.cn/manual/track_installation.html
  *
  * @param properties 渠道追踪事件的属性
  */
