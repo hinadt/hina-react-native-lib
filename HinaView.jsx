@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Button, Text, ScrollView, View, ToastAndroid } from "react-native";
+import { Button, Text, ScrollView, Alert } from "react-native";
 import HinaCloud from './HinaCloud';
 
 const Cafe = () => {
-  const [uid, setUid] = useState("");
   var param = {serverUrl:"https://loanetc.mandao.com/hn?token=BHRfsTQS",flushInterval:1000,flushPendSize:1,enableLog:true,autoTrackTypePolicy:3};
   HinaCloud.init(param)
   return (
@@ -15,7 +14,7 @@ const Cafe = () => {
           HinaCloud.track("click_one", {who:"william"})
         }}
       />
-            <Text>--</Text>
+      <Text>--</Text>
       <Button
         title="trackTimerStart"
         onPress={() => {
@@ -94,10 +93,10 @@ const Cafe = () => {
       />
       <Text>--</Text>
       <Button
-        title={uid}
+        title="getDeviceUId"
         onPress={() => {
           HinaCloud.getDeviceUIdPromise().then(result => {
-            title=result
+            Alert.alert(title="getDeviceUId", message=result)
           })
         }}
       />
