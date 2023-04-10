@@ -96,7 +96,7 @@ const Cafe = () => {
       <Button
         title={uid}
         onPress={() => {
-          HinaCloud.getDeviceUIdPromise().then(result => {
+          HinaCloud.getDeviceUId().then(result => {
             title=result
           })
         }}
