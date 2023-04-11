@@ -58,12 +58,12 @@ function trackTimerEnd (event, properties) {
 /**
  * 登录
  *
- * @param loginId
+ * @param userId 业务用户id，类型 String
  */
-function setUserUId (loginId) {
+function setUserUId (userId) {
     RNHinaReactNativeLib &&
       RNHinaReactNativeLib.setUserUId &&
-      RNHinaReactNativeLib.setUserUId(loginId);
+      RNHinaReactNativeLib.setUserUId(userId);
   }
   
   /**
@@ -103,22 +103,21 @@ function setUserUId (loginId) {
  * 给一个数值类型的 Profile 增加一个数值. 只能对数值型属性进行操作，若该属性
  * 未设置，则添加属性并设置默认值为 0.
  *
- * @param property 属性名称，类型 String
- * @param value 属性值，类型 Number
+ * @param profile 类型 {}
  */
-function userAdd (property, value) {
+function userAdd (profile) {
   RNHinaReactNativeLib &&
     RNHinaReactNativeLib.userAdd &&
-    RNHinaReactNativeLib.userAdd(property, value);
+    RNHinaReactNativeLib.userAdd(profile);
 }
 
 /**
  * 给一个列表类型的 Profile 增加一个元素.
  *
- * @param property 属性名称，类型 String
+ * @param propertyKey 属性名称，类型 String
  * @param strList 属性值，类型 []
  */
-function userAppend (property, strList) {
+function userAppend (propertyKey, strList) {
   RNHinaReactNativeLib &&
     RNHinaReactNativeLib.userAppend &&
     RNHinaReactNativeLib.userAppend(property, strList);
@@ -127,12 +126,12 @@ function userAppend (property, strList) {
 /**
  * 删除用户的一个 Profile.
  *
- * @param property 属性名称，类型 String
+ * @param propertyKey 属性名称，类型 String
  */
-function userUnset (property) {
+function userUnset (propertyKey) {
   RNHinaReactNativeLib &&
     RNHinaReactNativeLib.userUnset &&
-    RNHinaReactNativeLib.userUnset(property);
+    RNHinaReactNativeLib.userUnset(propertyKey);
 }
 
 /**
@@ -165,21 +164,21 @@ function clear () {
 /**
  * 替换“匿名 ID”
  *
- * @param anonymousId 传入的的匿名 ID，仅接受数字、下划线和大小写字母，类型 String
+ * @param deviceUId 传入的的匿名 ID，仅接受数字、下划线和大小写字母，类型 String
  */
-function setDeviceUId (anonymousId) {
+function setDeviceUId (deviceUId) {
   RNHinaReactNativeLib &&
     RNHinaReactNativeLib.setDeviceUId &&
-    RNHinaReactNativeLib.setDeviceUId(anonymousId);
+    RNHinaReactNativeLib.setDeviceUId(deviceUId);
 }
 
 /**
  * Promise 方式 getAnonymousId 获取匿名 ID.
  */
-async function getDeviceUIdPromise () {
-    if(RNHinaReactNativeLib && RNHinaReactNativeLib.getDeviceUIdPromise){
+async function getDeviceUId () {
+    if(RNHinaReactNativeLib && RNHinaReactNativeLib.getDeviceUId){
       try{
-        return await RNHinaReactNativeLib.getDeviceUIdPromise();
+        return await RNHinaReactNativeLib.getDeviceUId();
       }catch(e){
            console.log(e);
          }
@@ -240,6 +239,26 @@ function enableNetworkRequest(isRequest) {
     RNHinaReactNativeLib.enableNetworkRequest(isRequest);
 }
 
+async function getPresetProperties () {
+    if(RNHinaReactNativeLib && RNHinaReactNativeLib.getPresetProperties){
+      try{
+        return await RNHinaReactNativeLib.getPresetProperties();
+      }catch(e){
+           console.log(e);
+         }
+    }
+  }
+
+/**
+   * 设置公共属性
+   *
+   * @param properties 类型 {}
+   */
+function registerCommonProperties(properties) {
+  RNHinaReactNativeLib &&
+  RNHinaReactNativeLib.registerCommonProperties &&
+  RNHinaReactNativeLib.registerCommonProperties(properties);
+}
 
 /************** Android only end *****************/
 export {AutoTrackType}
@@ -249,6 +268,8 @@ export default {
   track,
   trackTimerStart,
   trackTimerEnd,
+  getPresetProperties,
+  registerCommonProperties,
   userSet,
   userSetOnce,
   userAdd,
@@ -259,11 +280,12 @@ export default {
   cleanUserUId,
   setPushUId,
   setDeviceUId,
-  getDeviceUIdPromise,
+  getDeviceUId,
   flush,
   clear,
   setServerUrl,
   setFlushNetworkPolicy,
+  enableNetworkRequest,
   enableNetworkRequest,
   hn: RNHinaReactNativeLib,
 };
