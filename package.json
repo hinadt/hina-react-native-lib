@@ -1,17 +1,24 @@
 {
-  "name": "react-native-hina-react-native-lib",
-  "version": "0.0.2",
+  "name": "hina-react-native-lib-beta",
+  "version": "0.0.3",
+  "private": false,
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native"
+    "hina",
+    "hinadt",
+    "hinacloud",
+    "海纳",
+    "海纳嗨数"
   ],
-  "author": "",
-  "license": "",
-  "peerDependencies": {
-    "react-native": "^0.41.2"
-  }
+  "author": "hina",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@git.hinadt.com:hina-cloud-sdk/hina-react-native-lib.git"
+  },
+  "homepage": "https://hicloud.hinadt.com/"
 }
