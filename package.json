@@ -13,5 +13,9 @@
   "license": "",
   "peerDependencies": {
     "react-native": "^0.41.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.hinadt.com:hina-cloud-sdk/hina-react-native-lib.git"
   }
 }
