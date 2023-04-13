@@ -207,7 +207,7 @@ NSString *const kSAEventElementContentProperty = @"$element_content";
     if (![settings isKindOfClass:[NSDictionary class]]) {
         return;
     }
-    NSString *serverURL = settings[@"server_url"];
+    NSString *serverURL = settings[@"serverUrl"];
     if (![serverURL isKindOfClass:[NSString class]]) {
         return;
     }
@@ -217,9 +217,13 @@ NSString *const kSAEventElementContentProperty = @"$element_content";
     if ([enableLog isKindOfClass:[NSNumber class]]) {
         options.enableLog = [enableLog boolValue];
     }
-    NSNumber *autoTrack = settings[@"auto_track"];
+    NSNumber *autoTrack = settings[@"autoTrackTypePolicy"];
     if ([autoTrack isKindOfClass:[NSNumber class]]) {
         options.autoTrackEventType = [autoTrack integerValue];
+    }
+    NSNumber *networkTypePolicy = settings[@"networkTypePolicy"];
+    if ([networkTypePolicy isKindOfClass:[NSNumber class]]) {
+        options.autoTrackEventType = [networkTypePolicy integerValue];
     }
     NSNumber *flushInterval = settings[@"flushInterval"];
     if ([flushInterval isKindOfClass:[NSNumber class]]) {
@@ -243,15 +247,14 @@ NSString *const kSAEventElementContentProperty = @"$element_content";
         options.maxCacheSize = [iOSSettings[@"max_cache_size"] integerValue];
     }
     // add
-    NSDictionary *new_iOSSettings = settings[@"ios"];
-    if ([iOSSettings isKindOfClass:[NSDictionary class]] && [iOSSettings[@"maxCacheSizeForIOS"] isKindOfClass:[NSNumber class]]) {
-        options.maxCacheSize = [iOSSettings[@"maxCacheSizeForIOS"] integerValue];
+    if ([settings isKindOfClass:[NSDictionary class]] && [settings[@"maxCacheSizeForIOS"] isKindOfClass:[NSNumber class]]) {
+        options.maxCacheSize = [settings[@"maxCacheSizeForIOS"] integerValue];
     }
     // add
-    //    NSDictionary *new_androidSettings = settings[@"android"];
-    //    if ([iOSSettings isKindOfClass:[NSDictionary class]] && [iOSSettings[@"maxCacheSizeForAndroid"] isKindOfClass:[NSNumber class]]) {
-    //        options.maxCacheSize = [iOSSettings[@"maxCacheSizeForAndroid"] longValue];
-    //    }
+    if ([iOSSettings isKindOfClass:[NSDictionary class]] && [iOSSettings[@"maxCacheSizeForAndroid"] isKindOfClass:[NSNumber class]]) {
+        
+    }
+    
     NSDictionary *visualizedSettings = settings[@"visualized"];
     if ([visualizedSettings isKindOfClass:[NSDictionary class]]) {
         if ([visualizedSettings[@"auto_track"] isKindOfClass:[NSNumber class]]) {

@@ -153,9 +153,6 @@ RCT_EXPORT_METHOD(trackInstallation:(NSString *)event withProperties:(NSDictiona
  */
 RCT_EXPORT_METHOD(setUserUId:(NSString *)loginId){
     @try {
-//        NSDictionary *properties = [HNReactNativeEventProperty eventProperties:nil];
-//        [[HinaCloudSDK sharedInstance] login:loginId withProperties:properties];
-//        [[HinaCloudSDK sharedInstance] setUserUId:loginId];
         [[HinaCloudSDK sharedInstance] setUserUId:loginId];
     } @catch (NSException *exception) {
         NSLog(@"[RNHinaCloud] error:%@",exception);
