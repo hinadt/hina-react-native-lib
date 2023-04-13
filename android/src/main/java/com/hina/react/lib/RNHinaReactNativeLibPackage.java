@@ -1,5 +1,5 @@
 
-package com.hinacloud.analytics;
+package com.hina.react.lib;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;

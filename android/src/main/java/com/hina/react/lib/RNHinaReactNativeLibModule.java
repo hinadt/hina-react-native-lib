@@ -1,5 +1,5 @@
 
-package com.hinacloud.analytics;
+package com.hina.react.lib;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -11,6 +11,8 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
+import com.hinacloud.analytics.HinaCloudSDK;
+import com.hinacloud.analytics.ICommonProperties;
 
 import org.json.JSONObject;
 

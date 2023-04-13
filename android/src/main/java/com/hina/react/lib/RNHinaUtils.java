@@ -1,4 +1,4 @@
-package com.hinacloud.analytics;
+package com.hina.react.lib;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReadableMap;
