@@ -11,8 +11,9 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
-import com.hinacloud.analytics.HinaCloudSDK;
-import com.hinacloud.analytics.ICommonProperties;
+import com.hina.analytics.HinaCloudSDK;
+import com.hina.analytics.HinaConfig;
+import com.hina.analytics.ICommonProperties;
 
 import org.json.JSONObject;
 
@@ -42,7 +43,7 @@ public class RNHinaReactNativeLibModule extends ReactContextBaseJavaModule {
         }
         try {
             JSONObject configJson = RNHinaUtils.convertToJSONObject(config);
-            HinaCloudSDK.Builder builder = new HinaCloudSDK.Builder();
+            HinaConfig.Builder builder = new HinaConfig.Builder();
             if (configJson != null) {
                 String serverUrl = configJson.optString("serverUrl");
                 if (!TextUtils.isEmpty(serverUrl)) {
@@ -83,9 +84,12 @@ public class RNHinaReactNativeLibModule extends ReactContextBaseJavaModule {
                 if (maxCacheSize > 0) {
                     builder.setMaxCacheSize(maxCacheSize);
                 }
+
+                HinaCloudSDK.init(getCurrentActivity(), builder.build());
+                Log.i(LOGTAG, "SDK init success");
+            } else {
+                Log.i(LOGTAG, "SDK init failed: configJson == null");
             }
-            builder.build(getCurrentActivity());
-            Log.i(LOGTAG, "init success");
         } catch (Exception e) {
             Log.i(LOGTAG, "SDK init failed:" + e.getMessage());
         }

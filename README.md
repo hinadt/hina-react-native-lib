@@ -1,13 +1,15 @@
 
-# react-native-hina-react-native-lib
+# hina-react-native-lib
 
 ## Getting started
 
-`$ npm install react-native-hina-react-native-lib --save`
+通过github `$ npm install --save https://github.com/hinadt/hina-react-native-lib.git`
+
+通过npm `$ npm install hina-react-native-lib --save`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-hina-react-native-lib`
+`$ react-native link hina-react-native-lib`
 
 ### Manual installation
 
@@ -22,24 +24,24 @@
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.hinacloud.analytics.RNHinaReactNativeLibPackage;` to the imports at the top of the file
+  - Add `import com.hina.react.lib.RNHinaReactNativeLibPackage;` to the imports at the top of the file
   - Add `new RNHinaReactNativeLibPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
-  	include ':react-native-hina-react-native-lib'
-  	project(':react-native-hina-react-native-lib').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-hina-react-native-lib/android')
+  	include ':hina-react-native-lib'
+  	project(':hina-react-native-lib').projectDir = new File(rootProject.projectDir, 	'../node_modules/hina-react-native-lib/android')
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```
-      compile project(':react-native-hina-react-native-lib')
+      compile project(':hina-react-native-lib')
   	```
 
 
 ## Usage
 ```javascript
-import RNHinaReactNativeLib from 'react-native-hina-react-native-lib';
+import RNHinaReactNativeLibModule from 'hina-react-native-lib';
 
 // TODO: What to do with the module?
-RNHinaReactNativeLib;
+RNHinaReactNativeLibModule;
 ```
   

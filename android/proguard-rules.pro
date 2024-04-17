@@ -20,3 +20,8 @@
 -keep class com.sensorsdata.analytics.** {
 *;
 }
+
+-dontwarn com.hina.analytics.**
+-keep class com.hina.analytics.** {
+*;
+}
