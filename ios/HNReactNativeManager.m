@@ -233,10 +233,13 @@ NSString *const kSAEventElementContentProperty = @"$element_content";
     if ([flushBulksize isKindOfClass:[NSNumber class]]) {
         options.flushPendSize = [flushBulksize integerValue];
     }
+    /*
     NSNumber *enableEncrypt = settings[@"encrypt"];
     if ([enableEncrypt isKindOfClass:[NSNumber class]]) {
         options.enableEncrypt = [enableEncrypt boolValue];
     }
+    */
+
     NSNumber *enableJavascriptBridge = settings[@"enableJSBridge"];
     if ([enableJavascriptBridge isKindOfClass:[NSNumber class]]) {
         //        options.enableJavaScriptBridge = [enableJavascriptBridge boolValue];
@@ -256,6 +259,8 @@ NSString *const kSAEventElementContentProperty = @"$element_content";
     }
     
     NSDictionary *visualizedSettings = settings[@"visualized"];
+
+/*
     if ([visualizedSettings isKindOfClass:[NSDictionary class]]) {
         if ([visualizedSettings[@"auto_track"] isKindOfClass:[NSNumber class]]) {
             options.enableVisualizedAutoTrack = [visualizedSettings[@"auto_track"] boolValue];
@@ -264,10 +269,14 @@ NSString *const kSAEventElementContentProperty = @"$element_content";
             options.enableVisualizedProperties = [visualizedSettings[@"properties"] boolValue];
         }
     }
+    */
+
+/*
     NSNumber *enableHeatMap = settings[@"heat_map"];
     if ([enableHeatMap isKindOfClass:[NSNumber class]]) {
         options.enableHeatMap = [enableHeatMap boolValue];
     }
+    */
     
     // 注册全局属性插件
     NSDictionary *properties = settings[@"global_properties"];
