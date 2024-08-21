@@ -3,12 +3,13 @@
 
 @implementation HNReactNativeDynamicPropertyPlugin
 
-- (BOOL)isMatchedWithFilter:(id<SAPropertyPluginEventFilter>)filter {
-    return filter.type & SAEventTypeDefault;
+- (BOOL)isMatchedWithFilter:(id<HNPropertyPluginEventFilter>)filter {
+    
+    return filter.type & HNEventTypeDefault;
 }
 
-- (SAPropertyPluginPriority)priority {
-    return SAPropertyPluginPriorityLow;
+- (HNPropertyPluginPriority)priority {
+    return HNPropertyPluginPriorityLow;
 }
 
 @end

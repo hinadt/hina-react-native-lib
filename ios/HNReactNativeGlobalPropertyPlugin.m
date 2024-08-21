@@ -19,13 +19,13 @@
     return self;
 }
 
-- (BOOL)isMatchedWithFilter:(id<SAPropertyPluginEventFilter>)filter {
+- (BOOL)isMatchedWithFilter:(id<HNPropertyPluginEventFilter>)filter {
     // 支持 track、Signup、Bind、Unbind
-    return filter.type & SAEventTypeDefault;
+    return filter.type & HNEventTypeDefault;
 }
 
-- (SAPropertyPluginPriority)priority {
-    return SAPropertyPluginPriorityLow;
+- (HNPropertyPluginPriority)priority {
+    return HNPropertyPluginPriorityLow;
 }
 
 - (NSDictionary<NSString *,id> *)properties {
