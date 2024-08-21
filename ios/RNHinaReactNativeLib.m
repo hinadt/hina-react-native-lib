@@ -507,7 +507,7 @@ RCT_EXPORT_METHOD(clearKeychainData){
  */
 RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(getDistinctId){
     @try {
-        NSString *bestId = [HinaCloudSDK sharedInstance].loginId;
+        NSString *bestId = [HinaCloudSDK sharedInstance].deviceUId;
         if (bestId == nil) {
             bestId = [HinaCloudSDK sharedInstance].distinctId;
         }
@@ -536,7 +536,7 @@ RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(getDistinctId){
  */
 RCT_EXPORT_METHOD(getDistinctIdPromise:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject){
     @try {
-        NSString *bestId = [HinaCloudSDK sharedInstance].loginId;
+        NSString *bestId = [HinaCloudSDK sharedInstance].deviceUId;
         if (bestId == nil) {
             bestId = [HinaCloudSDK sharedInstance].distinctId;
         }
@@ -944,7 +944,7 @@ RCT_EXPORT_METHOD(setFlushNetworkPolicy:(NSInteger)networkType) {
  */
 RCT_EXPORT_METHOD(getLoginIdPromise:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject) {
     @try {
-        resolve([[HinaCloudSDK sharedInstance] loginId]);
+        resolve([[HinaCloudSDK sharedInstance] deviceUId]);
     } @catch (NSException *exception) {
         NSLog(@"[RNHinaCloud] error:%@",exception);
     }
@@ -983,13 +983,13 @@ RCT_EXPORT_METHOD(isAutoTrackEnabledPromise:(RCTPromiseResolveBlock)resolve reje
  *  RNHinaReactNativeLib.isVisualizedAutoTrackEnabledPromise().then((value) => { // value 为获取到的可视化埋点开启状态  }) }>
  *  </Button>
  */
-RCT_EXPORT_METHOD(isVisualizedAutoTrackEnabledPromise:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject) {
-    @try {
-        resolve(@([[HinaCloudSDK sharedInstance] isVisualizedAutoTrackEnabled]));
-    } @catch (NSException *exception) {
-        NSLog(@"[RNHinaCloud] error:%@",exception);
-    }
-}
+//RCT_EXPORT_METHOD(isVisualizedAutoTrackEnabledPromise:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject) {
+//    @try {
+//        resolve(@([[HinaCloudSDK sharedInstance] isVisualizedAutoTrackEnabled]));
+//    } @catch (NSException *exception) {
+//        NSLog(@"[RNHinaCloud] error:%@",exception);
+//    }
+//}
 
 /**
  * 是否开启点击图
@@ -1003,13 +1003,13 @@ RCT_EXPORT_METHOD(isVisualizedAutoTrackEnabledPromise:(RCTPromiseResolveBlock)re
  *  RNHinaReactNativeLib.isHeatMapEnabledPromise().then((value) => { // value 为获取到的热力图开启状态  }) }>
  *  </Button>
  */
-RCT_EXPORT_METHOD(isHeatMapEnabledPromise:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject) {
-    @try {
-        resolve(@([[HinaCloudSDK sharedInstance] isHeatMapEnabled]));
-    } @catch (NSException *exception) {
-        NSLog(@"[RNHinaCloud] error:%@",exception);
-    }
-}
+//RCT_EXPORT_METHOD(isHeatMapEnabledPromise:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject) {
+//    @try {
+//        resolve(@([[HinaCloudSDK sharedInstance] isHeatMapEnabled]));
+//    } @catch (NSException *exception) {
+//        NSLog(@"[RNHinaCloud] error:%@",exception);
+//    }
+//}
 
 /**
  * 记录 $AppInstall 事件，用于在 App 首次启动时追踪渠道来源，并设置追踪渠道事件的属性。

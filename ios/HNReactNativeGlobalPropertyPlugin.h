@@ -1,14 +1,14 @@
 
 #import <Foundation/Foundation.h>
-#if __has_include(<HinaCloudSDK/SAPropertyPlugin.h>)
-#import <HinaCloudSDK/SAPropertyPlugin.h>
+#if __has_include(<HinaCloudSDK/HNPropertyPlugin.h>)
+#import <HinaCloudSDK/HNPropertyPlugin.h>
 #else
-#import "SAPropertyPlugin.h"
+#import "HNPropertyPlugin.h"
 #endif
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HNReactNativeGlobalPropertyPlugin : SAPropertyPlugin
+@interface HNReactNativeGlobalPropertyPlugin : HNPropertyPlugin
 
 /// 全局属性插件
 ///

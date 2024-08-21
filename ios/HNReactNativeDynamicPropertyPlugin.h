@@ -8,7 +8,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HNReactNativeDynamicPropertyPlugin : SAPropertyPlugin
+@interface HNReactNativeDynamicPropertyPlugin : HNPropertyPlugin
 
 @property (atomic, copy) NSDictionary *properties;
 
