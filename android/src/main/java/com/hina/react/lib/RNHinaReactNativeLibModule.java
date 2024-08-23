@@ -330,11 +330,11 @@ public class RNHinaReactNativeLibModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void enableNetworkRequest(boolean isRequest) {
-        try {
-            HinaCloudSDK.getInstance().enableNetworkRequest(isRequest);
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.e(LOGTAG, e.toString() + "");
-        }
+//        try {
+//            HinaCloudSDK.getInstance().enableNetworkRequest(isRequest);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            Log.e(LOGTAG, e.toString() + "");
+//        }
     }
 }

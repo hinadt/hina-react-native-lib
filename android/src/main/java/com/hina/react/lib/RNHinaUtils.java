@@ -4,7 +4,7 @@ import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableNativeMap;
 import com.facebook.react.bridge.WritableMap;
-import com.sensorsdata.analytics.android.sdk.SALog;
+import com.hina.analytics.common.utils.LogUtils;
 
 import org.json.JSONObject;
 
@@ -34,7 +34,7 @@ public class RNHinaUtils {
                 }
             }
         } catch (Exception e) {
-            SALog.printStackTrace(e);
+            LogUtils.printStackTrace(e);
         }
         return json;
     }
@@ -53,7 +53,7 @@ public class RNHinaUtils {
                 String key = it.next();
                 writableMap.putString(key, json.optString(key));
             } catch (Exception e) {
-                SALog.printStackTrace(e);
+                LogUtils.printStackTrace(e);
             }
         }
         return writableMap;
@@ -70,7 +70,7 @@ public class RNHinaUtils {
         try {
             map = ((ReadableNativeMap)properties).toHashMap();
         }catch (Exception e){
-            SALog.printStackTrace(e);
+            LogUtils.printStackTrace(e);
         }
         return map;
     }
@@ -97,7 +97,7 @@ public class RNHinaUtils {
                 dest.put(key, value);
             }
         } catch (Exception ex) {
-            SALog.printStackTrace(ex);
+            LogUtils.printStackTrace(ex);
         }
     }
 }
