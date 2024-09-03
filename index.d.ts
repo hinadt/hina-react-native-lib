@@ -1,7 +1,7 @@
 /**
  * 初始化 SDK
  *
- * @param config 初始化配置，支持参数可参考{link https://manual.sensorsdata.cn/sa/latest/react-native-1574001.html#id-.ReactNativev1.13-%E5%88%9D%E5%A7%8B%E5%8C%96SDK}
+ * @param config 初始化配置
  */
 export function init(config: Partial<Config>): void
 /**

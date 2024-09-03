@@ -14,6 +14,7 @@ import com.facebook.react.bridge.WritableMap;
 import com.hina.analytics.HinaCloudSDK;
 import com.hina.analytics.HinaConfig;
 import com.hina.analytics.ICommonProperties;
+import com.hina.react.lib.utils.RNUtils;
 
 import org.json.JSONObject;
 
@@ -42,7 +43,7 @@ public class RNHinaReactNativeLibModule extends ReactContextBaseJavaModule {
             return;
         }
         try {
-            JSONObject configJson = RNHinaUtils.convertToJSONObject(config);
+            JSONObject configJson = RNUtils.convertToJSONObject(config);
             HinaConfig.Builder builder = new HinaConfig.Builder();
             if (configJson != null) {
                 String serverUrl = configJson.optString("serverUrl");
@@ -98,7 +99,7 @@ public class RNHinaReactNativeLibModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void track(String eventName, ReadableMap properties) {
         try {
-            JSONObject propertiesJson = RNHinaUtils.convertToJSONObject(properties);
+            JSONObject propertiesJson = RNUtils.convertToJSONObject(properties);
             HinaCloudSDK.getInstance().track(eventName, propertiesJson);
         } catch (Exception e) {
             e.printStackTrace();
@@ -119,7 +120,7 @@ public class RNHinaReactNativeLibModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void trackTimerEnd(String eventName, ReadableMap properties) {
         try {
-            JSONObject jsonObject = RNHinaUtils.convertToJSONObject(properties);
+            JSONObject jsonObject = RNUtils.convertToJSONObject(properties);
             HinaCloudSDK.getInstance().trackTimerEnd(eventName, jsonObject);
         } catch (Exception e) {
             e.printStackTrace();
@@ -134,7 +135,7 @@ public class RNHinaReactNativeLibModule extends ReactContextBaseJavaModule {
         }
         try {
             JSONObject properties = HinaCloudSDK.getInstance().getPresetProperties();
-            WritableMap map = RNHinaUtils.convertToMap(properties);
+            WritableMap map = RNUtils.convertToMap(properties);
             if (map != null) {
                 promise.resolve(map);
             }
@@ -151,7 +152,7 @@ public class RNHinaReactNativeLibModule extends ReactContextBaseJavaModule {
             HinaCloudSDK.getInstance().registerCommonProperties(new ICommonProperties() {
                 @Override
                 public JSONObject getCommonProperties() {
-                    return RNHinaUtils.convertToJSONObject(properties);
+                    return RNUtils.convertToJSONObject(properties);
                 }
             });
         } catch (Exception e) {
@@ -163,7 +164,7 @@ public class RNHinaReactNativeLibModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void userSet(ReadableMap properties) {
         try {
-            HinaCloudSDK.getInstance().userSet(RNHinaUtils.convertToJSONObject(properties));
+            HinaCloudSDK.getInstance().userSet(RNUtils.convertToJSONObject(properties));
         } catch (Exception e) {
             e.printStackTrace();
             Log.e(LOGTAG, e.toString() + "");
@@ -173,7 +174,7 @@ public class RNHinaReactNativeLibModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void userSetOnce(ReadableMap properties) {
         try {
-            HinaCloudSDK.getInstance().userSetOnce(RNHinaUtils.convertToJSONObject(properties));
+            HinaCloudSDK.getInstance().userSetOnce(RNUtils.convertToJSONObject(properties));
         } catch (Exception e) {
             e.printStackTrace();
             Log.e(LOGTAG, e.toString() + "");
@@ -183,7 +184,7 @@ public class RNHinaReactNativeLibModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void userAdd(ReadableMap properties) {
         try {
-            JSONObject jsonObject = RNHinaUtils.convertToJSONObject(properties);
+            JSONObject jsonObject = RNUtils.convertToJSONObject(properties);
             if (jsonObject != null) {
                 Iterator<String> keys = jsonObject.keys();
                 Map<String, Number> map = new HashMap<>();

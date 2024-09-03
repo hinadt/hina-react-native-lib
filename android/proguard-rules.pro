@@ -16,8 +16,8 @@
 #   public *;
 #}
 
--dontwarn com.sensorsdata.analytics.**
--keep class com.sensorsdata.analytics.** {
+-dontwarn com.hina.react.**
+-keep class com.hina.react.** {
 *;
 }
 

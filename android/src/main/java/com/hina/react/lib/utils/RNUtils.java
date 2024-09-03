@@ -1,17 +1,17 @@
-package com.hina.react.lib;
+package com.hina.react.lib.utils;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableNativeMap;
 import com.facebook.react.bridge.WritableMap;
-import com.hina.analytics.common.utils.LogUtils;
-
-import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import com.hina.analytics.common.utils.LogUtils;
+import org.json.JSONObject;
 
-public class RNHinaUtils {
+
+public class RNUtils {
     /**
      * ReadableMap 转换成 JSONObject
      */
@@ -101,4 +101,3 @@ public class RNHinaUtils {
         }
     }
 }
-
