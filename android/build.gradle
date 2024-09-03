@@ -27,6 +27,6 @@ android {
 dependencies {
     compileOnly 'com.facebook.react:react-native:+'
     //添加 SDK 依赖
-    compileOnly 'com.hinadt.hicloud.android:HinaCloudSDK:4.1.0'
+    compileOnly 'com.hinadt.hicloud.android:HinaCloudSDK:4.1.1'
 }
   
