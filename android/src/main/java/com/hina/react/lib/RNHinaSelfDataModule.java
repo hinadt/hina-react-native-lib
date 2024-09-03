@@ -65,12 +65,12 @@ public class RNHinaSelfDataModule extends ReactContextBaseJavaModule {
             if (params != null) {
                 JSONObject jsonParams = RNUtils.convertToJSONObject(params);
                 JSONObject properties = null;
-                if (jsonParams.has("param_data")) {
-                    properties = jsonParams.optJSONObject("param_data");
+                if (jsonParams.has("sensorsdataparams")) {
+                    properties = jsonParams.optJSONObject("sensorsdataparams");
                 }
                 String url = null;
-                if (jsonParams.has("param_url")) {
-                    url = jsonParams.getString("param_url");
+                if (jsonParams.has("sensorsdataurl")) {
+                    url = jsonParams.getString("sensorsdataurl");
                 }
                 if (url == null) {
                     return;
