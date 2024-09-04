@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		452E43642758986E0074530B /* SAReactNativeSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 452E43612758986E0074530B /* SAReactNativeSwizzler.m */; };
-		4532EFF7275E319600D57554 /* SAReactNativeRootViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4532EFF6275E319600D57554 /* SAReactNativeRootViewManager.m */; };
-		4535DFF727B24DB700456830 /* SAReactNativeDynamicPropertyPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4535DFF627B24DB700456830 /* SAReactNativeDynamicPropertyPlugin.m */; };
-		4D618ED828F27706002F3CCA /* SAReactNativeGlobalPropertyPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D618ED728F27706002F3CCA /* SAReactNativeGlobalPropertyPlugin.m */; };
-		A18E9FB421A6AEDD00A66E41 /* RNHinaReactNativeLib.m in Sources */ = {isa = PBXBuildFile; fileRef = A18E9FB221A6AEDD00A66E41 /* RNHinaReactNativeLib.m */; };
-		FC39004C244715AE00F486A7 /* SAReactNativeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC39004B244715AE00F486A7 /* SAReactNativeManager.m */; };
-		FC6EF7A9259DA6A40099EEB5 /* SAReactNativeEventProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6EF7A8259DA6A40099EEB5 /* SAReactNativeEventProperty.m */; };
-		FC9EE671243731C000C45D16 /* RNHinaCloudModule.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9EE670243731C000C45D16 /* RNHinaCloudModule.m */; };
-		FCD3CF2B25466B7800758260 /* SAReactNativeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD3CF2A25466B7800758260 /* SAReactNativeCategory.m */; };
+		FA71AD262C883739005B122E /* HNReactNativeGlobalPropertyPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = FA71AD142C883739005B122E /* HNReactNativeGlobalPropertyPlugin.m */; };
+		FA71AD272C883739005B122E /* RNHinaCloudModule.m in Sources */ = {isa = PBXBuildFile; fileRef = FA71AD182C883739005B122E /* RNHinaCloudModule.m */; };
+		FA71AD282C883739005B122E /* HNReactNativeRootViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA71AD1C2C883739005B122E /* HNReactNativeRootViewManager.m */; };
+		FA71AD292C883739005B122E /* HNReactNativeDynamicPropertyPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = FA71AD1D2C883739005B122E /* HNReactNativeDynamicPropertyPlugin.m */; };
+		FA71AD2A2C883739005B122E /* HNReactNativeSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = FA71AD202C883739005B122E /* HNReactNativeSwizzler.m */; };
+		FA71AD2B2C883739005B122E /* HNReactNativeEventProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = FA71AD212C883739005B122E /* HNReactNativeEventProperty.m */; };
+		FA71AD2C2C883739005B122E /* HNReactNativeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FA71AD222C883739005B122E /* HNReactNativeCategory.m */; };
+		FA71AD2D2C883739005B122E /* HNReactNativeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA71AD232C883739005B122E /* HNReactNativeManager.m */; };
+		FA71AD2E2C883739005B122E /* RNHinaReactNativeLib.m in Sources */ = {isa = PBXBuildFile; fileRef = FA71AD252C883739005B122E /* RNHinaReactNativeLib.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,25 +31,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		452E43612758986E0074530B /* SAReactNativeSwizzler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAReactNativeSwizzler.m; sourceTree = "<group>"; };
-		452E43622758986E0074530B /* SAReactNativeSwizzler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAReactNativeSwizzler.h; sourceTree = "<group>"; };
-		4532EFF5275E319600D57554 /* SAReactNativeRootViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAReactNativeRootViewManager.h; sourceTree = "<group>"; };
-		4532EFF6275E319600D57554 /* SAReactNativeRootViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAReactNativeRootViewManager.m; sourceTree = "<group>"; };
-		4535DFF527B24DB700456830 /* SAReactNativeDynamicPropertyPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAReactNativeDynamicPropertyPlugin.h; sourceTree = "<group>"; };
-		4535DFF627B24DB700456830 /* SAReactNativeDynamicPropertyPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAReactNativeDynamicPropertyPlugin.m; sourceTree = "<group>"; };
-		4D618ED628F27706002F3CCA /* SAReactNativeGlobalPropertyPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAReactNativeGlobalPropertyPlugin.h; sourceTree = "<group>"; };
-		4D618ED728F27706002F3CCA /* SAReactNativeGlobalPropertyPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAReactNativeGlobalPropertyPlugin.m; sourceTree = "<group>"; };
 		A18E9FA621A6AB4300A66E41 /* libRNHinaReactNativeLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNHinaReactNativeLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A18E9FB221A6AEDD00A66E41 /* RNHinaReactNativeLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNHinaReactNativeLib.m; sourceTree = "<group>"; };
-		A18E9FB321A6AEDD00A66E41 /* RNHinaReactNativeLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNHinaReactNativeLib.h; sourceTree = "<group>"; };
-		FC39004A244715AE00F486A7 /* SAReactNativeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAReactNativeManager.h; sourceTree = "<group>"; };
-		FC39004B244715AE00F486A7 /* SAReactNativeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAReactNativeManager.m; sourceTree = "<group>"; };
-		FC6EF7A7259DA6A40099EEB5 /* SAReactNativeEventProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAReactNativeEventProperty.h; sourceTree = "<group>"; };
-		FC6EF7A8259DA6A40099EEB5 /* SAReactNativeEventProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SAReactNativeEventProperty.m; sourceTree = "<group>"; };
-		FC9EE66F243731C000C45D16 /* RNHinaCloudModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNHinaCloudModule.h; sourceTree = "<group>"; };
-		FC9EE670243731C000C45D16 /* RNHinaCloudModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNHinaCloudModule.m; sourceTree = "<group>"; };
-		FCD3CF2925466B7800758260 /* SAReactNativeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAReactNativeCategory.h; sourceTree = "<group>"; };
-		FCD3CF2A25466B7800758260 /* SAReactNativeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAReactNativeCategory.m; sourceTree = "<group>"; };
+		FA71AD142C883739005B122E /* HNReactNativeGlobalPropertyPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNReactNativeGlobalPropertyPlugin.m; sourceTree = "<group>"; };
+		FA71AD152C883739005B122E /* HNReactNativeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNReactNativeCategory.h; sourceTree = "<group>"; };
+		FA71AD162C883739005B122E /* HNReactNativeRootViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNReactNativeRootViewManager.h; sourceTree = "<group>"; };
+		FA71AD172C883739005B122E /* HNReactNativeSwizzler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNReactNativeSwizzler.h; sourceTree = "<group>"; };
+		FA71AD182C883739005B122E /* RNHinaCloudModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNHinaCloudModule.m; sourceTree = "<group>"; };
+		FA71AD192C883739005B122E /* RNHinaCloudModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNHinaCloudModule.h; sourceTree = "<group>"; };
+		FA71AD1A2C883739005B122E /* HNReactNativeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNReactNativeManager.h; sourceTree = "<group>"; };
+		FA71AD1B2C883739005B122E /* HNReactNativeEventProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNReactNativeEventProperty.h; sourceTree = "<group>"; };
+		FA71AD1C2C883739005B122E /* HNReactNativeRootViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNReactNativeRootViewManager.m; sourceTree = "<group>"; };
+		FA71AD1D2C883739005B122E /* HNReactNativeDynamicPropertyPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNReactNativeDynamicPropertyPlugin.m; sourceTree = "<group>"; };
+		FA71AD1E2C883739005B122E /* HNReactNativeDynamicPropertyPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNReactNativeDynamicPropertyPlugin.h; sourceTree = "<group>"; };
+		FA71AD1F2C883739005B122E /* HNReactNativeGlobalPropertyPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNReactNativeGlobalPropertyPlugin.h; sourceTree = "<group>"; };
+		FA71AD202C883739005B122E /* HNReactNativeSwizzler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNReactNativeSwizzler.m; sourceTree = "<group>"; };
+		FA71AD212C883739005B122E /* HNReactNativeEventProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNReactNativeEventProperty.m; sourceTree = "<group>"; };
+		FA71AD222C883739005B122E /* HNReactNativeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNReactNativeCategory.m; sourceTree = "<group>"; };
+		FA71AD232C883739005B122E /* HNReactNativeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNReactNativeManager.m; sourceTree = "<group>"; };
+		FA71AD242C883739005B122E /* RNHinaReactNativeLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNHinaReactNativeLib.h; sourceTree = "<group>"; };
+		FA71AD252C883739005B122E /* RNHinaReactNativeLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNHinaReactNativeLib.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,24 +66,24 @@
 		A18E9F9D21A6AB4300A66E41 = {
 			isa = PBXGroup;
 			children = (
-				4535DFF527B24DB700456830 /* SAReactNativeDynamicPropertyPlugin.h */,
-				4535DFF627B24DB700456830 /* SAReactNativeDynamicPropertyPlugin.m */,
-				4532EFF5275E319600D57554 /* SAReactNativeRootViewManager.h */,
-				4532EFF6275E319600D57554 /* SAReactNativeRootViewManager.m */,
-				452E43622758986E0074530B /* SAReactNativeSwizzler.h */,
-				452E43612758986E0074530B /* SAReactNativeSwizzler.m */,
-				A18E9FB321A6AEDD00A66E41 /* RNHinaReactNativeLib.h */,
-				A18E9FB221A6AEDD00A66E41 /* RNHinaReactNativeLib.m */,
-				FC9EE66F243731C000C45D16 /* RNHinaCloudModule.h */,
-				FC9EE670243731C000C45D16 /* RNHinaCloudModule.m */,
-				4D618ED628F27706002F3CCA /* SAReactNativeGlobalPropertyPlugin.h */,
-				4D618ED728F27706002F3CCA /* SAReactNativeGlobalPropertyPlugin.m */,
-				FC39004A244715AE00F486A7 /* SAReactNativeManager.h */,
-				FC39004B244715AE00F486A7 /* SAReactNativeManager.m */,
-				FC6EF7A7259DA6A40099EEB5 /* SAReactNativeEventProperty.h */,
-				FC6EF7A8259DA6A40099EEB5 /* SAReactNativeEventProperty.m */,
-				FCD3CF2925466B7800758260 /* SAReactNativeCategory.h */,
-				FCD3CF2A25466B7800758260 /* SAReactNativeCategory.m */,
+				FA71AD152C883739005B122E /* HNReactNativeCategory.h */,
+				FA71AD222C883739005B122E /* HNReactNativeCategory.m */,
+				FA71AD1E2C883739005B122E /* HNReactNativeDynamicPropertyPlugin.h */,
+				FA71AD1D2C883739005B122E /* HNReactNativeDynamicPropertyPlugin.m */,
+				FA71AD1B2C883739005B122E /* HNReactNativeEventProperty.h */,
+				FA71AD212C883739005B122E /* HNReactNativeEventProperty.m */,
+				FA71AD1F2C883739005B122E /* HNReactNativeGlobalPropertyPlugin.h */,
+				FA71AD142C883739005B122E /* HNReactNativeGlobalPropertyPlugin.m */,
+				FA71AD1A2C883739005B122E /* HNReactNativeManager.h */,
+				FA71AD232C883739005B122E /* HNReactNativeManager.m */,
+				FA71AD162C883739005B122E /* HNReactNativeRootViewManager.h */,
+				FA71AD1C2C883739005B122E /* HNReactNativeRootViewManager.m */,
+				FA71AD172C883739005B122E /* HNReactNativeSwizzler.h */,
+				FA71AD202C883739005B122E /* HNReactNativeSwizzler.m */,
+				FA71AD192C883739005B122E /* RNHinaCloudModule.h */,
+				FA71AD182C883739005B122E /* RNHinaCloudModule.m */,
+				FA71AD242C883739005B122E /* RNHinaReactNativeLib.h */,
+				FA71AD252C883739005B122E /* RNHinaReactNativeLib.m */,
 				A18E9FA721A6AB4300A66E41 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -152,15 +152,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A18E9FB421A6AEDD00A66E41 /* RNHinaReactNativeLib.m in Sources */,
-				FC39004C244715AE00F486A7 /* SAReactNativeManager.m in Sources */,
-				4535DFF727B24DB700456830 /* SAReactNativeDynamicPropertyPlugin.m in Sources */,
-				FC6EF7A9259DA6A40099EEB5 /* SAReactNativeEventProperty.m in Sources */,
-				FCD3CF2B25466B7800758260 /* SAReactNativeCategory.m in Sources */,
-				4D618ED828F27706002F3CCA /* SAReactNativeGlobalPropertyPlugin.m in Sources */,
-				452E43642758986E0074530B /* SAReactNativeSwizzler.m in Sources */,
-				FC9EE671243731C000C45D16 /* RNHinaCloudModule.m in Sources */,
-				4532EFF7275E319600D57554 /* SAReactNativeRootViewManager.m in Sources */,
+				FA71AD2D2C883739005B122E /* HNReactNativeManager.m in Sources */,
+				FA71AD2C2C883739005B122E /* HNReactNativeCategory.m in Sources */,
+				FA71AD292C883739005B122E /* HNReactNativeDynamicPropertyPlugin.m in Sources */,
+				FA71AD262C883739005B122E /* HNReactNativeGlobalPropertyPlugin.m in Sources */,
+				FA71AD2B2C883739005B122E /* HNReactNativeEventProperty.m in Sources */,
+				FA71AD2A2C883739005B122E /* HNReactNativeSwizzler.m in Sources */,
+				FA71AD282C883739005B122E /* HNReactNativeRootViewManager.m in Sources */,
+				FA71AD2E2C883739005B122E /* RNHinaReactNativeLib.m in Sources */,
+				FA71AD272C883739005B122E /* RNHinaCloudModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

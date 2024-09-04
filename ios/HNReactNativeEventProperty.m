@@ -6,7 +6,7 @@
 #import "HNReactNativeEventProperty.h"
 #import "RNHinaReactNativeLib.h"
 
-NSString *const kSALibPluginVersionKey = @"$lib_plugin_version";
+NSString *const kSALibPluginVersionKey = @"H_lib_plugin_version";
 
 @implementation HNReactNativeEventProperty
 
@@ -18,12 +18,12 @@ NSString *const kSALibPluginVersionKey = @"$lib_plugin_version";
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
     [result addEntriesFromDictionary:properties];
     NSString *libMethod = @"code";
-    if (isAuto || [result[@"$lib_method"] isEqualToString:@"autoTrack"]) {
-        // 当自定义属性中设置的 $lib_method 为 autoTrack 时有效，其他内容时 $lib_method 为 code
-        // isAuto：当触发事件为全埋点时，$lib_method 为 autoTrack 且不可修改
+    if (isAuto || [result[@"H_lib_method"] isEqualToString:@"autoTrack"]) {
+        // 当自定义属性中设置的 H_lib_method 为 autoTrack 时有效，其他内容时 H_lib_method 为 code
+        // isAuto：当触发事件为全埋点时，H_lib_method 为 autoTrack 且不可修改
         libMethod = @"autoTrack";
     }
-    result[@"$lib_method"] = libMethod;
+    result[@"H_lib_method"] = libMethod;
     if (result[kSALibPluginVersionKey]) {
         return result;
     }

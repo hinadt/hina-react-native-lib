@@ -179,19 +179,19 @@ RCT_EXPORT_METHOD(cleanUserUId){
 /**
  * 导出 trackViewScreen 方法给 RN 使用.
  *
- * 此方法用于 RN 中 Tab 切换页面的时候调用，用于记录 $AppViewScreen 事件.
+ * 此方法用于 RN 中 Tab 切换页面的时候调用，用于记录 H_AppViewScreen 事件.
  *
  * @param url        页面的 url  记录到 $url 字段中(如果不需要此属性，可以传 null ).
  * @param properties 页面的属性.
  *
- * 注：为保证记录到的 $AppViewScreen 事件和 Auto Track 采集的一致，
- *    需要传入 $title（页面的title） 、$screen_name （页面的名称，即 包名.类名）字段.
+ * 注：为保证记录到的 H_AppViewScreen 事件和 Auto Track 采集的一致，
+ *    需要传入 H_title（页面的title） 、H_screen_name （页面的名称，即 包名.类名）字段.
  *
  * RN 中使用示例：
  *     <Button
  *            title="Button"
  *            onPress={()=>
- *            RNHinaReactNativeLib.trackViewScreen(null,{"$title":"RN主页","$screen_name":"cn.hn.demo.RNHome"})}>
+ *            RNHinaReactNativeLib.trackViewScreen(null,{"H_title":"RN主页","H_screen_name":"cn.hn.demo.RNHome"})}>
  *     </Button>
  *
  *
@@ -1012,13 +1012,13 @@ RCT_EXPORT_METHOD(isAutoTrackEnabledPromise:(RCTPromiseResolveBlock)resolve reje
 //}
 
 /**
- * 记录 $AppInstall 事件，用于在 App 首次启动时追踪渠道来源，并设置追踪渠道事件的属性。
+ * 记录 H_AppInstall 事件，用于在 App 首次启动时追踪渠道来源，并设置追踪渠道事件的属性。
  *
  * @param properties 渠道追踪事件的属性
  */
 RCT_EXPORT_METHOD(trackAppInstall:(NSDictionary *)property) {
     @try {
-        [[HinaCloudSDK sharedInstance] trackInstallation:@"$AppInstall" withProperties:property];
+        [[HinaCloudSDK sharedInstance] trackInstallation:@"H_AppInstall" withProperties:property];
     } @catch (NSException *exception) {
         NSLog(@"[RNHinaCloud] error:%@",exception);
     }

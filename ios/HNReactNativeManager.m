@@ -12,9 +12,9 @@
 #import "HNReactNativeGlobalPropertyPlugin.h"
 
 #pragma mark - Constants
-NSString *const kSAEventScreenNameProperty = @"$screen_name";
-NSString *const kSAEventTitleProperty = @"$title";
-NSString *const kSAEventElementContentProperty = @"$element_content";
+NSString *const kSAEventScreenNameProperty = @"H_screen_name";
+NSString *const kSAEventTitleProperty = @"H_title";
+NSString *const kSAEventElementContentProperty = @"H_element_content";
 
 #pragma mark - React Native Manager
 @interface HNReactNativeManager ()
@@ -124,7 +124,7 @@ NSString *const kSAEventElementContentProperty = @"$element_content";
     if (![[HinaCloudSDK sharedInstance] isAutoTrackEnabled]) {
         return;
     }
-    // 忽略 $AppClick 事件
+    // 忽略 H_AppClick 事件
     if ([[HinaCloudSDK sharedInstance] isAutoTrackEventTypeIgnored:HNAutoTrackAppClick]) {
         return;
     }
@@ -175,7 +175,7 @@ NSString *const kSAEventElementContentProperty = @"$element_content";
         rootView.sa_reactnative_screenProperties = [pageProps copy];
     });
     
-    // 忽略 React Native 触发的 $AppViewScreen 事件
+    // 忽略 React Native 触发的 H_AppViewScreen 事件
     if (autoTrack && [properties[@"SAIgnoreViewScreen"] boolValue]) {
         return;
     }
@@ -185,7 +185,7 @@ NSString *const kSAEventElementContentProperty = @"$element_content";
         return;
     }
     
-    // 忽略所有 $AppViewScreen 事件
+    // 忽略所有 H_AppViewScreen 事件
     if (autoTrack && [[HinaCloudSDK sharedInstance] isAutoTrackEventTypeIgnored:HNAutoTrackAppScreen]) {
         return;
     }
