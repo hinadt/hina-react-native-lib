@@ -19,7 +19,7 @@ public class RNHinaReactNativeLibPackage implements ReactPackage {
         List<NativeModule> modules = new ArrayList<>();
         //在你们的Package中 添加海纳嗨数原生模块
         modules.add(new RNHinaReactNativeLibModule(reactContext));
-        modules.add(new RNHinaSelfDataModule(reactContext));
+        modules.add(new RNHinaCloudModule(reactContext));
         return modules;
     }
 

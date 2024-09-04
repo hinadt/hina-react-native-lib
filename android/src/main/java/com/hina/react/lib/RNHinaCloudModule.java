@@ -29,9 +29,9 @@ import org.json.JSONObject;
  * ReadableArray -> Array
  */
 
-public class RNHinaSelfDataModule extends ReactContextBaseJavaModule {
+public class RNHinaCloudModule extends ReactContextBaseJavaModule {
 
-    public RNHinaSelfDataModule(ReactApplicationContext reactContext) {
+    public RNHinaCloudModule(ReactApplicationContext reactContext) {
         super(reactContext);
         try {
             reactContext.addLifecycleEventListener(new HinaDataLifecycleListener());
@@ -43,8 +43,8 @@ public class RNHinaSelfDataModule extends ReactContextBaseJavaModule {
         RNPropertyManager.addInterceptor(new LibMethodInterceptor());
     }
 
-    private static final String MODULE_NAME = "RNHinaSelfDataModule";
-    private static final String TAG = "HA.RNHinaSelfDataModule";
+    private static final String MODULE_NAME = "RNHinaCloudModule";
+    private static final String TAG = "HA.RNHinaCloudModule";
 
     /**
      * 返回一个字符串名字，这个名字在 JavaScript (RN)端标记这个模块。

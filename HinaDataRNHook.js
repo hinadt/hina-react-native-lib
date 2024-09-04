@@ -54,7 +54,7 @@ dir + '/react-native-gesture-handler/src/components/GestureButtons.tsx'];
 var sensorsdataClickHookCode = "(function(thatThis){ \n"
                                +"  try {\n"
                                +"    var ReactNative = require('react-native');\n"
-                               +"    var dataModule = ReactNative.NativeModules.RNHinaSelfDataModule;\n"
+                               +"    var dataModule = ReactNative.NativeModules.RNHinaCloudModule;\n"
                                +"    thatThis.props.onPress && dataModule && dataModule.trackViewClick && dataModule.trackViewClick(ReactNative.findNodeHandle(thatThis))\n"
                                +"  } catch (error) { throw new Error('SensorsData RN Hook Code 调用异常: ' + error);}\n"
                                +"})(this); /* SENSORSDATA HOOK */ ";
@@ -63,7 +63,7 @@ var sensorsdataClickHookPressabilityCode = " var tag = event.currentTarget && ev
                                             +"  if(thatThis){\n"
                                             +"    try {\n"
                                             +"      var ReactNative = require('react-native');\n"
-                                            +"      var dataModule = ReactNative.NativeModules.RNHinaSelfDataModule;\n"
+                                            +"      var dataModule = ReactNative.NativeModules.RNHinaCloudModule;\n"
                                             +"      dataModule && dataModule.trackViewClick && dataModule.trackViewClick(thatThis);\n"
                                             +"    }catch (error){\n"
                                             +"      throw new Error('SensorsData RN Hook Code 调用异常: ' + error);}}}\n"
@@ -71,7 +71,7 @@ var sensorsdataClickHookPressabilityCode = " var tag = event.currentTarget && ev
 var sensorsdataSliderHookCode = "(function(thatThis){\n"
                                +"  try {\n"
                                +"    var ReactNative = require('react-native');\n"
-                               +"    var dataModule = ReactNative.NativeModules.RNHinaSelfDataModule;\n"
+                               +"    var dataModule = ReactNative.NativeModules.RNHinaCloudModule;\n"
                                +"    dataModule && dataModule.trackViewClick && dataModule.trackViewClick(event.nativeEvent.target);\n"
                                +"  } catch (error) { \n"
                                +"      throw new Error('SensorsData RN Hook Code 调用异常: ' + error);\n"
@@ -81,7 +81,7 @@ var sensorsdataSegmentedControlHookCode = "if(this.props.onChange != null || thi
                                +"(function(thatThis){\n"
                                +"  try {\n"
                                +"    var ReactNative = require('react-native');\n"
-                               +"    var dataModule = ReactNative.NativeModules.RNHinaSelfDataModule;\n"
+                               +"    var dataModule = ReactNative.NativeModules.RNHinaCloudModule;\n"
                                +"    dataModule && dataModule.trackViewClick && dataModule.trackViewClick(event.nativeEvent.target);\n"
                                +"  } catch (error) { \n"
                                +"      throw new Error('SensorsData RN Hook Code 调用异常: ' + error);}\n"
@@ -90,7 +90,7 @@ var sensorsdataSwitchHookCode = "if(this.props.onChange != null || this.props.on
                                +"  (function(thatThis){ \n"
                                +"    try {\n"
                                +"      var ReactNative = require('react-native');\n"
-                               +"      var dataModule = ReactNative.NativeModules.RNHinaSelfDataModule;\n"
+                               +"      var dataModule = ReactNative.NativeModules.RNHinaCloudModule;\n"
                                +"      dataModule && dataModule.trackViewClick && dataModule.trackViewClick(ReactNative.findNodeHandle(thatThis));\n"
                                +"    } catch (error) { throw new Error('SensorsData RN Hook Code 调用异常: ' + error);}\n"
                                +"  })(this); /* SENSORSDATA HOOK */}";
@@ -98,7 +98,7 @@ var sensorsdataSwitchHookCode66 = "if(nativeSwitchRef.current && onValueChange){
                                + "  (function(thatThis){ \n"
                                + "    try {\n"
                                + "      var ReactNative = require('react-native');\n"
-                               + "      var dataModule = ReactNative.NativeModules.RNHinaSelfDataModule;\n"
+                               + "      var dataModule = ReactNative.NativeModules.RNHinaCloudModule;\n"
                                + "      dataModule && dataModule.trackViewClick && dataModule.trackViewClick(ReactNative.findNodeHandle(nativeSwitchRef.current));\n"
                                + "    } catch (error) { throw new Error('SensorsData RN Hook Code 调用异常: ' + error);}\n"
                                + "  })(this); /* SENSORSDATA HOOK */}";
@@ -160,7 +160,7 @@ var sensorsdataNavigation5HookCode = `
             saProperties.sensorsdataparams = {SAIgnoreViewScreen : true};
           }
         }
-		var dataModule = ReactNative?.NativeModules?.RNHinaSelfDataModule;
+		var dataModule = ReactNative?.NativeModules?.RNHinaCloudModule;
 		dataModule?.trackViewScreen && dataModule.trackViewScreen(saProperties);
 	}
 	trackViewScreen(getRootState());
@@ -226,7 +226,7 @@ var sensorsDataHookReduxCreateCode =
             saProperties.sensorsdataparams = {SAIgnoreViewScreen : true};
           }
         }
-		var dataModule = ReactNative?.NativeModules?.RNHinaSelfDataModule;
+		var dataModule = ReactNative?.NativeModules?.RNHinaCloudModule;
 		dataModule?.trackViewScreen && dataModule.trackViewScreen(saProperties);
       }
       trackViewScreen(this.props.state);
@@ -306,7 +306,7 @@ var sensorsDataHookReduxMiddleCode = `
 	            saProperties.sensorsdataparams = {SAIgnoreViewScreen : true};
 	          }
           }
-		  var dataModule = ReactNative?.NativeModules?.RNHinaSelfDataModule;
+		  var dataModule = ReactNative?.NativeModules?.RNHinaCloudModule;
 		  dataModule?.trackViewScreen && dataModule.trackViewScreen(saProperties);
         }
         trackViewScreen(navStateSelector(newState));
@@ -822,7 +822,7 @@ sensorsdataHookClickableRN = function (reset = false) {
 	         if(elementProps.onStartShouldSetResponder || isSegmentedControl) {
 		         var saProps = eachProgress(saElement);
 		         var ReactNative = require('react-native');
-		         var dataModule = ReactNative.NativeModules.RNHinaSelfDataModule;
+		         var dataModule = ReactNative.NativeModules.RNHinaCloudModule;
 
              if(dataModule && dataModule.saveRootViewProperties) {
                var saRootTag;
@@ -974,12 +974,12 @@ navigationString3 = function (
             }
          }
          var ReactNative = require('react-native');
-         var dataModule = ReactNative.NativeModules.RNHinaSelfDataModule;
+         var dataModule = ReactNative.NativeModules.RNHinaCloudModule;
          dataModule && dataModule.trackViewScreen && dataModule.trackViewScreen(params);
     } else if (require('react-native').Platform.OS === 'ios') {
         if (!${actionName} || iosOnPageShow) {
             var ReactNative = require('react-native');
-            var dataModule = ReactNative.NativeModules.RNHinaSelfDataModule;
+            var dataModule = ReactNative.NativeModules.RNHinaCloudModule;
             dataModule && dataModule.trackViewScreen && dataModule.trackViewScreen(params);
         }
     }`;
@@ -1012,7 +1012,7 @@ navigationEventString = function () {
 			          }
 		          }
                  var ReactNative = require('react-native');
-                 var dataModule = ReactNative.NativeModules.RNHinaSelfDataModule;
+                 var dataModule = ReactNative.NativeModules.RNHinaCloudModule;
                  dataModule && dataModule.trackViewScreen && dataModule.trackViewScreen(saProperties);
             }
           }
@@ -1063,7 +1063,7 @@ navigationString = function (currentStateVarName, actionName) {
 	          }
             if (require('react-native').Platform.OS === 'android') {
              var ReactNative = require('react-native');
-             var dataModule = ReactNative.NativeModules.RNHinaSelfDataModule;
+             var dataModule = ReactNative.NativeModules.RNHinaCloudModule;
              dataModule && dataModule.trackViewScreen && dataModule.trackViewScreen(params);}`;
   return script;
 };
