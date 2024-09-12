@@ -65,12 +65,12 @@ public class RNHinaCloudModule extends ReactContextBaseJavaModule {
             if (params != null) {
                 JSONObject jsonParams = RNUtils.convertToJSONObject(params);
                 JSONObject properties = null;
-                if (jsonParams.has("sensorsdataparams")) {
-                    properties = jsonParams.optJSONObject("sensorsdataparams");
+                if (jsonParams.has("hinadataparams")) {
+                    properties = jsonParams.optJSONObject("hinadataparams");
                 }
                 String url = null;
-                if (jsonParams.has("sensorsdataurl")) {
-                    url = jsonParams.getString("sensorsdataurl");
+                if (jsonParams.has("hinadataurl")) {
+                    url = jsonParams.getString("hinadataurl");
                 }
                 if (url == null) {
                     return;

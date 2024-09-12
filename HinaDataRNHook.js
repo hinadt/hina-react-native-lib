@@ -142,22 +142,22 @@ var sensorsdataNavigation5HookCode = `
 		var params = getParams(state);
 		var saProperties = {};
 		if (params) {
-		  if (!params.sensorsdataurl) {
-		    saProperties.sensorsdataurl = screenName;
+		  if (!params.hinadataurl) {
+		    saProperties.hinadataurl = screenName;
 		  }else{
-		    saProperties.sensorsdataurl = params.sensorsdataurl;
+		    saProperties.hinadataurl = params.hinadataurl;
 		  }
-		  if(params.sensorsdataparams){
-		    saProperties.sensorsdataparams = JSON.parse(JSON.stringify(params.sensorsdataparams));
+		  if(params.hinadataparams){
+		    saProperties.hinadataparams = JSON.parse(JSON.stringify(params.hinadataparams));
 		  }
 		} else {
-		    saProperties.sensorsdataurl = screenName;
+		    saProperties.hinadataurl = screenName;
 		}
 	    if(${ignoreScreen}){
-          if(saProperties.sensorsdataparams){
-            saProperties.sensorsdataparams.SAIgnoreViewScreen = true;
+          if(saProperties.hinadataparams){
+            saProperties.hinadataparams.SAIgnoreViewScreen = true;
           }else{
-            saProperties.sensorsdataparams = {SAIgnoreViewScreen : true};
+            saProperties.hinadataparams = {SAIgnoreViewScreen : true};
           }
         }
 		var dataModule = ReactNative?.NativeModules?.RNHinaCloudModule;
@@ -208,22 +208,22 @@ var sensorsDataHookReduxCreateCode =
         var params = getParams(route);
 		var saProperties = {};
 		if (params) {
-		  if (!params.sensorsdataurl) {
-		    saProperties.sensorsdataurl = screenName;
+		  if (!params.hinadataurl) {
+		    saProperties.hinadataurl = screenName;
 		  }else{
-	        saProperties.sensorsdataurl = params.sensorsdataurl;
+	        saProperties.hinadataurl = params.hinadataurl;
 	      }
-		  if(params.sensorsdataparams){
-		    saProperties.sensorsdataparams = JSON.parse(JSON.stringify(params.sensorsdataparams));
+		  if(params.hinadataparams){
+		    saProperties.hinadataparams = JSON.parse(JSON.stringify(params.hinadataparams));
 		  }
 		} else {
-		    saProperties.sensorsdataurl = screenName;
+		    saProperties.hinadataurl = screenName;
 		}
 	    if(${ignoreScreen}){
-          if(saProperties.sensorsdataparams){
-            saProperties.sensorsdataparams.SAIgnoreViewScreen = true;
+          if(saProperties.hinadataparams){
+            saProperties.hinadataparams.SAIgnoreViewScreen = true;
           }else{
-            saProperties.sensorsdataparams = {SAIgnoreViewScreen : true};
+            saProperties.hinadataparams = {SAIgnoreViewScreen : true};
           }
         }
 		var dataModule = ReactNative?.NativeModules?.RNHinaCloudModule;
@@ -288,22 +288,22 @@ var sensorsDataHookReduxMiddleCode = `
           var params = getParams(route);
 		  var saProperties = {};
 		  if (params) {
-		    if (!params.sensorsdataurl) {
-		      saProperties.sensorsdataurl = screenName;
+		    if (!params.hinadataurl) {
+		      saProperties.hinadataurl = screenName;
 		    }else{
-	          saProperties.sensorsdataurl = params.sensorsdataurl;
+	          saProperties.hinadataurl = params.hinadataurl;
 	        }
-		    if(params.sensorsdataparams){
-		      saProperties.sensorsdataparams = JSON.parse(JSON.stringify(params.sensorsdataparams));
+		    if(params.hinadataparams){
+		      saProperties.hinadataparams = JSON.parse(JSON.stringify(params.hinadataparams));
 		    }
 		  } else {
-		    saProperties.sensorsdataurl = screenName;
+		    saProperties.hinadataurl = screenName;
 		  }
 	      if(${ignoreScreen}){
-	          if(saProperties.sensorsdataparams){
-	            saProperties.sensorsdataparams.SAIgnoreViewScreen = true;
+	          if(saProperties.hinadataparams){
+	            saProperties.hinadataparams.SAIgnoreViewScreen = true;
 	          }else{
-	            saProperties.sensorsdataparams = {SAIgnoreViewScreen : true};
+	            saProperties.hinadataparams = {SAIgnoreViewScreen : true};
 	          }
           }
 		  var dataModule = ReactNative?.NativeModules?.RNHinaCloudModule;
@@ -775,8 +775,8 @@ sensorsdataHookClickableRN = function (reset = false) {
            }else if(workInProgress.props){
              props = workInProgress.props;
            }
-           if(props && props.sensorsdataparams){
-             return props.sensorsdataparams;
+           if(props && props.hinadataparams){
+             return props.hinadataparams;
            }else {
              if(!props ||
                 !workInProgress.type ||
@@ -920,16 +920,16 @@ navigationString3 = function (
               }else{
                 var saProperties = {};
                 if(route.params) {
-                  if(!route.params.sensorsdataurl){
-                    saProperties.sensorsdataurl = route.routeName;
+                  if(!route.params.hinadataurl){
+                    saProperties.hinadataurl = route.routeName;
                   }else{
-                    saProperties.sensorsdataurl = route.params.sensorsdataurl;
+                    saProperties.hinadataurl = route.params.hinadataurl;
                   }
-				  if(route.params.sensorsdataparams){
-				     saProperties.sensorsdataparams = JSON.parse(JSON.stringify(route.params.sensorsdataparams));
+				  if(route.params.hinadataparams){
+				     saProperties.hinadataparams = JSON.parse(JSON.stringify(route.params.hinadataparams));
 				  }
                 } else {
-                  saProperties = {sensorsdataurl:route.routeName};
+                  saProperties = {hinadataurl:route.routeName};
                 }
                 return saProperties;
               }
@@ -960,16 +960,16 @@ navigationString3 = function (
   script = `
   ${script} var params = $$$getActivePageName$$$(${currentStateVarName});
 	      if(${ignoreScreen}){
-	          if(params.sensorsdataparams){
-	            params.sensorsdataparams.SAIgnoreViewScreen = true;
+	          if(params.hinadataparams){
+	            params.hinadataparams.SAIgnoreViewScreen = true;
 	          }else{
-	            params.sensorsdataparams = {SAIgnoreViewScreen : true};
+	            params.hinadataparams = {SAIgnoreViewScreen : true};
 	          }
           }
     if (require('react-native').Platform.OS === 'android') {
         if (${prevStateVarName}){
             var prevParams = $$$getActivePageName$$$(${prevStateVarName});
-            if (params.sensorsdataurl == prevParams.sensorsdataurl){
+            if (params.hinadataurl == prevParams.hinadataurl){
                   return;
             }
          }
@@ -992,23 +992,23 @@ navigationEventString = function () {
           if(payload && payload.state && payload.state.key && payload.state.routeName && payload.state.key != payload.state.routeName) {
             var saProperties = {};
             if(payload.state.params) {
-                if(!payload.state.params.sensorsdataurl){
-                    saProperties.sensorsdataurl = payload.state.routeName;
+                if(!payload.state.params.hinadataurl){
+                    saProperties.hinadataurl = payload.state.routeName;
                 }else{
-                    saProperties.sensorsdataurl = payload.state.params.sensorsdataurl;
+                    saProperties.hinadataurl = payload.state.params.hinadataurl;
                 }
-                if(payload.state.params.sensorsdataparams){
-                   saProperties.sensorsdataparams = JSON.parse(JSON.stringify(payload.state.params.sensorsdataparams));
+                if(payload.state.params.hinadataparams){
+                   saProperties.hinadataparams = JSON.parse(JSON.stringify(payload.state.params.hinadataparams));
                 }
             }else{
-                saProperties.sensorsdataurl = payload.state.routeName;
+                saProperties.hinadataurl = payload.state.routeName;
             }
             if(type == 'didFocus') {
 			      if(${ignoreScreen}){
-			          if(saProperties.sensorsdataparams){
-			            saProperties.sensorsdataparams.SAIgnoreViewScreen = true;
+			          if(saProperties.hinadataparams){
+			            saProperties.hinadataparams.SAIgnoreViewScreen = true;
 			          }else{
-			            saProperties.sensorsdataparams = {SAIgnoreViewScreen : true};
+			            saProperties.hinadataparams = {SAIgnoreViewScreen : true};
 			          }
 		          }
                  var ReactNative = require('react-native');
@@ -1029,16 +1029,16 @@ navigationString = function (currentStateVarName, actionName) {
             }else{
                 var saProperties = {};
                 if(route.params) {
-                  if(!route.params.sensorsdataurl){
-                    saProperties.sensorsdataurl = route.routeName;
+                  if(!route.params.hinadataurl){
+                    saProperties.hinadataurl = route.routeName;
                   }else{
-                    saProperties.sensorsdataurl = route.params.sensorsdataurl;
+                    saProperties.hinadataurl = route.params.hinadataurl;
                   }
-				  if(route.params.sensorsdataparams){
-				    saProperties.sensorsdataparams = JSON.parse(JSON.stringify(route.params.sensorsdataparams));
+				  if(route.params.hinadataparams){
+				    saProperties.hinadataparams = JSON.parse(JSON.stringify(route.params.hinadataparams));
 				  }
                 } else {
-                  saProperties.sensorsdataurl = route.routeName;
+                  saProperties.hinadataurl = route.routeName;
                 }
                 return saProperties;
             }
@@ -1055,10 +1055,10 @@ navigationString = function (currentStateVarName, actionName) {
 
   script = `${script} var params = $$$getActivePageName$$$(${currentStateVarName});
 		      if(${ignoreScreen}){
-		          if(params.sensorsdataparams){
-		            params.sensorsdataparams.SAIgnoreViewScreen = true;
+		          if(params.hinadataparams){
+		            params.hinadataparams.SAIgnoreViewScreen = true;
 		          }else{
-		            params.sensorsdataparams = {SAIgnoreViewScreen : true};
+		            params.hinadataparams = {SAIgnoreViewScreen : true};
 		          }
 	          }
             if (require('react-native').Platform.OS === 'android') {

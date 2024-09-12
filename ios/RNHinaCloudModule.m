@@ -32,8 +32,8 @@ RCT_EXPORT_METHOD(trackViewClick:(NSInteger)reactTag) {
 RCT_EXPORT_METHOD(trackViewScreen:(NSDictionary *)params) {
     @try {
         // 自动采集页面浏览时 url 在 params
-        NSString *url = params[@"sensorsdataurl"];
-        NSDictionary *properties = params[@"sensorsdataparams"];
+        NSString *url = params[@"hinadataurl"];
+        NSDictionary *properties = params[@"hinadataparams"];
         [[HNReactNativeManager sharedInstance] trackViewScreen:url properties:properties autoTrack:YES];
     } @catch (NSException *exception) {
         NSLog(@"[RNHinaCloud] error:%@",exception);
