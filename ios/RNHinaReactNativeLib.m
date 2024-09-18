@@ -32,12 +32,6 @@ RCT_EXPORT_METHOD(init:(NSDictionary *)settings){
  * @param event  事件名称
  * @param propertyDict 事件的具体属性
  *
- * RN 中使用示例：
- *     <Button
- *            title="Button"
- *            onPress={()=>
- *            RNHinaReactNativeLib.track("RN_AddToFav",{"ProductID":123456,"UserLevel":"VIP"})}>
- *     </Button>
  */
 
 RCT_EXPORT_METHOD(track:(NSString *)event withProperties:(NSDictionary *)propertyDict){
@@ -55,12 +49,6 @@ RCT_EXPORT_METHOD(track:(NSString *)event withProperties:(NSDictionary *)propert
  * 初始化事件的计时器，默认计时单位为秒(计时开始).
  * @param eventName 事件的名称.
  *
- *  RN 中使用示例：（计时器事件名称 viewTimer ）
- *     <Button
- *            title="Button"
- *            onPress={()=>
- *            RNHinaReactNativeLib.trackTimerStart("viewTimer")}>
- *     </Button>
  */
 RCT_EXPORT_METHOD(trackTimerStart:(NSString *)event){
     @try {
@@ -75,12 +63,6 @@ RCT_EXPORT_METHOD(trackTimerStart:(NSString *)event){
  * 初始化事件的计时器，默认计时单位为秒(计时结束并触发事件).
  * @param eventName 事件的名称.
  *
- *  RN 中使用示例：（计时器事件名称 viewTimer ）
- *     <Button
- *            title="Button"
- *            onPress={()=>
- *            RNHinaReactNativeLib.trackTimerEnd("viewTimer",{"ProductID":123456,"UserLevel":"VIP"})}>
- *     </Button>
  */
 RCT_EXPORT_METHOD(trackTimerEnd:(NSString *)event withProperties:(NSDictionary *)propertyDict){
     @try {
@@ -95,12 +77,6 @@ RCT_EXPORT_METHOD(trackTimerEnd:(NSString *)event withProperties:(NSDictionary *
  * <p>
  * 清除所有事件计时器
  * <p>
- * RN 中使用示例：
- *      <Button
- *                 title="Button"
- *                 onPress={()=>
- *                 RNHinaReactNativeLib.clearTrackTimer()}>
- *      </Button>
  */
 RCT_EXPORT_METHOD(clearTrackTimer){
     @try {
@@ -116,21 +92,6 @@ RCT_EXPORT_METHOD(clearTrackTimer){
  * @param event  事件名.
  * @param propertyDict 事件属性.
  *
- *  RN 中使用示例：
- *     <Button
- *            title="Button"
- *            onPress={()=>
- *            const date = new Date();
- *            this.year = date.getFullYear();
- *            this.month = date.getMonth() + 1;
- *            this.date = date.getDate();
- *            this.hour = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
- *            this.minute = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
- *            this.second = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
- *            var currentTime =  this.year + "-" + this.month + "-" + this.date + " " + this.hour
- *                               + ":" + this.minute + ":" + this.second;
- *            RNHinaReactNativeLib.trackInstallation("AppInstall",{"FirstUseTime":currentTime})}>
- *     </Button>
  */
 RCT_EXPORT_METHOD(trackInstallation:(NSString *)event withProperties:(NSDictionary *)propertyDict){
     @try {
@@ -140,16 +101,10 @@ RCT_EXPORT_METHOD(trackInstallation:(NSString *)event withProperties:(NSDictiona
     }
 }
 /**
- * 导出 login 方法给 RN 使用.
+ * 导出 setUserUId 方法给 RN 使用.
  *
- * @param loginId 用户唯一下登录ID
+ * @param setUserUId 用户唯一下登录ID
  *
- * RN 中使用示例：
- *     <Button
- *            title="Button"
- *            onPress={()=>
- *            RNHinaReactNativeLib.login("developer@.cn")}>
- *     </Button>
  */
 RCT_EXPORT_METHOD(setUserUId:(NSString *)loginId){
     @try {
@@ -159,14 +114,8 @@ RCT_EXPORT_METHOD(setUserUId:(NSString *)loginId){
     }
 }
 /**
- * 导出 logout 方法给 RN 使用.
+ * 导出 cleanUserUId 方法给 RN 使用.
  *
- * RN 中使用示例：
- *     <Button
- *            title="Button"
- *            onPress={()=>
- *            RNHinaReactNativeLib.logout()}>
- *     </Button>
  */
 RCT_EXPORT_METHOD(cleanUserUId){
     @try {
@@ -206,14 +155,8 @@ RCT_EXPORT_METHOD(trackViewScreen:(NSString *)url withProperties:(NSDictionary *
 /**
  * 导出 set 方法给 RN 使用.
  *
- * @param profileDict 用户属性
+ * @param userSet 用户属性
  *
- * RN 中使用示例：（保存用户的属性 "sex":"男"）
- *     <Button
- *            title="Button"
- *            onPress={()=>
- *            RNHinaReactNativeLib.set({"sex":"男"})}>
- *     </Button>
  */
 RCT_EXPORT_METHOD(userSet:(NSDictionary *)profileDict){
     @try {
@@ -227,12 +170,6 @@ RCT_EXPORT_METHOD(userSet:(NSDictionary *)profileDict){
  *
  * @param profileDict 用户属性
  *
- * RN 中使用示例：（保存用户的属性 "sex":"男"）
- *     <Button
- *            title="Button"
- *            onPress={()=>
- *            RNHinaReactNativeLib.profileSet({"sex":"男"})}>
- *     </Button>
  */
 RCT_EXPORT_METHOD(profileSet:(NSDictionary *)profileDict){
     @try {
@@ -242,19 +179,13 @@ RCT_EXPORT_METHOD(profileSet:(NSDictionary *)profileDict){
     }
 }
 /**
- * 导出 setOnce 方法给 RN 使用.
+ * 导出 userSetOnce 方法给 RN 使用.
  *
  * 首次设置用户的一个或多个 Profile.
  * 与set接口不同的是，如果之前存在，则忽略，否则，新创建.
  *
  * @param profileDict 属性列表
  *
- *  RN 中使用示例：（保存用户的属性 "sex":"男"）
- *     <Button
- *            title="Button"
- *            onPress={()=>
- *            RNHinaReactNativeLib.setOnce({"sex":"男"})}>
- *     </Button>
  */
 RCT_EXPORT_METHOD(userSetOnce:(NSDictionary *)profileDict){
     @try {
@@ -286,18 +217,10 @@ RCT_EXPORT_METHOD(profileSetOnce:(NSDictionary *)profileDict){
     }
 }
 /**
- * 导出 unset 方法给 RN 使用.
+ * 导出 userUnset 方法给 RN 使用.
  * <p>
  * 删除用户的一个 Profile.
  *
- * @param property 属性名称.
- *                 <p>
- *                 RN 中使用示例：
- *                 <Button
- *                 title="Button"
- *                 onPress={()=>
- *                 RNHinaReactNativeLib.unset("sex")}>
- *                 </Button>
  */
 RCT_EXPORT_METHOD(userUnset:(NSString *) profile){
     @try {
@@ -330,7 +253,7 @@ RCT_EXPORT_METHOD(profileUnset:(NSString *) profile){
 }
 
 /**
- * 导出 increment 方法给 RN 使用.
+ * 导出 add 方法给 RN 使用.
  *
  * 给一个数值类型的Profile增加一个数值. 只能对数值型属性进行操作，若该属性
  * 未设置，则添加属性并设置默认值为0.
@@ -338,12 +261,6 @@ RCT_EXPORT_METHOD(profileUnset:(NSString *) profile){
  * @param property 属性名称
  * @param value    属性的值，值的类型只允许为 Number .
  *
- * RN 中使用示例：
- *     <Button
- *            title="Button"
- *            onPress={()=>
- *            RNHinaReactNativeLib.increment("money",10)}>
- *     </Button>
  */
 RCT_EXPORT_METHOD(add:(NSString *)profile by:(nonnull NSNumber *)amount){
     @try {
@@ -387,20 +304,13 @@ RCT_EXPORT_METHOD(userAdd:(NSDictionary *)profile){
 }
 
 /**
- * 导出 append 方法给 RN 使用.
+ * 导出 userAppend 方法给 RN 使用.
  * <p>
  * 向一个<code>NSSet</code>类型的value添加一些值
  *
  * @param property 属性名称.
  * @param value    新增的元素.
  *                 <p>
- * RN 中使用示例：
- *      <Button
- *                 title="Button"
- *                 onPress={()=>{
- *                   var list = ["Sicario","Love Letter"];
- *                   RNHinaReactNativeLib.append("Move",list);}>
- *     </Button>
  */
 RCT_EXPORT_METHOD(userAppend:(NSString *)profile by:(NSArray *)content){
     @try {
@@ -436,16 +346,10 @@ RCT_EXPORT_METHOD(profileAppend:(NSString *)profile by:(NSArray *)content){
 }
 
 /**
- * 导出 deleteUser 方法给 RN 使用.
+ * 导出 userDelete 方法给 RN 使用.
  * <p>
  * 删除当前这个用户的所有记录.
  * <p>
- * RN 中使用示例：
- *      <Button
- *                title="Button"
- *                onPress={()=>
- *                RNHinaReactNativeLib.deleteUser()}>
- *      </Button>
  */
 RCT_EXPORT_METHOD(userDelete){
     @try {
@@ -460,12 +364,6 @@ RCT_EXPORT_METHOD(userDelete){
  * <p>
  * 删除当前这个用户的所有记录.
  * <p>
- * RN 中使用示例：
- *      <Button
- *                title="Button"
- *                onPress={()=>
- *                RNHinaReactNativeLib.profileDelete()}>
- *      </Button>
  */
 RCT_EXPORT_METHOD(profileDelete){
     @try {
@@ -482,12 +380,6 @@ RCT_EXPORT_METHOD(profileDelete){
  * <p>
  * 删除当前 keychain记录 .
  * <p>
- * RN 中使用示例：
- *      <Button
- *                title="Button"
- *                onPress={()=>
- *                RNHinaReactNativeLib.clearKeychainData()}>
- *      </Button>
  */
 RCT_EXPORT_METHOD(clearKeychainData){
     @try {
@@ -551,14 +443,10 @@ RCT_EXPORT_METHOD(getDistinctIdPromise:(RCTPromiseResolveBlock)resolve reject:(R
 }
 
 /**
- * 导出 getAnonymousIdPromise 方法给 RN 使用.
+ * 导出 getDeviceUId 方法给 RN 使用.
  * <p>
- * Promise 方式 getAnonymousId 获取匿名 ID.
+ * Promise 方式 getDeviceUId 获取匿名 ID.
  * <p>
- * RN 中使用示例：
- *    async  getAnonymousIdPromise() {
- *       var anonymousId = await RNHinaReactNativeLib.getAnonymousIdPromise()
- *    };
  */
 RCT_EXPORT_METHOD(getDeviceUId:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject){
     @try {
@@ -569,16 +457,10 @@ RCT_EXPORT_METHOD(getDeviceUId:(RCTPromiseResolveBlock)resolve reject:(RCTPromis
 }
 
 /**
- * 导出 registerSuperProperties 方法给 RN 使用.
+ * 导出 registerCommonProperties 方法给 RN 使用.
  *
  * @param properties 要设置的公共属性
  *
- * RN 中使用示例：设置公共属性 "Platform":"iOS"）
- *     <Button
- *            title="Button"
- *            onPress={()=>
- *            RNHinaReactNativeLib.registerSuperProperties({"Platform":"iOS"})}>
- *     </Button>
  */
 RCT_EXPORT_METHOD(registerCommonProperties:(NSDictionary *)properties){
     @try {
@@ -593,12 +475,6 @@ RCT_EXPORT_METHOD(registerCommonProperties:(NSDictionary *)properties){
  *
  * @param property 要设置的公共属性
  *
- * RN 中使用示例：（删除公共属性 "Platform"）
- *     <Button
- *            title="Button"
- *            onPress={()=>
- *            RNHinaReactNativeLib.unregisterSuperProperty("Platform")}>
- *     </Button>
  */
 RCT_EXPORT_METHOD(unregisterSuperProperty:(NSString *)property){
     @try {
@@ -631,12 +507,6 @@ RCT_EXPORT_METHOD(clearSuperProperties){
  * 导出 flush 方法给 RN 使用.
  *
  *                   <p>
- *                   RN 中使用示例：（强制发送数据到服务端）
- *                   <Button
- *                   title="Button"
- *                   onPress={()=>
- *                   RNHinaReactNativeLib.flush()}>
- *                   </Button>
  */
 RCT_EXPORT_METHOD(flush){
     @try {
@@ -647,15 +517,10 @@ RCT_EXPORT_METHOD(flush){
 }
 
 /**
- * 导出 deleteAll 方法给 RN 使用.
+ * 导出 clear 方法给 RN 使用.
  *
  *                   <p>
  *                   RN 中使用示例：（删除本地数据库的所有数据！！！请谨慎使用）
- *                   <Button
- *                   title="Button"
- *                   onPress={()=>
- *                   RNHinaReactNativeLib.deleteAll()}>
- *                   </Button>
  */
 RCT_EXPORT_METHOD(clear){
     @try {
@@ -668,14 +533,9 @@ RCT_EXPORT_METHOD(clear){
 /**
  * 导出 identify 方法给 RN 使用.
  *
- * @param anonymousId 当前用户的 anonymousId
+ * @param deviceUId 当前用户的 deviceUId(设备Id/访客Id/匿名Id/anonymousId)
  *
- *  RN 中使用示例：（在初始化 SDK 之后立即调用，替换神策分析默认分配的 *匿名 ID*）
- *                   <Button
- *                   title="Button"
- *                   onPress={()=>
- *                   RNHinaReactNativeLib.identify("AAA")}>
- *                   </Button>
+ *  RN 中使用示例：（在初始化 SDK 之后立即调用，替换海纳分析默认分配的 *匿名 ID*）
  */
 RCT_EXPORT_METHOD(setDeviceUId:(NSString *)deviceUId) {
     @try {
@@ -691,13 +551,6 @@ RCT_EXPORT_METHOD(setDeviceUId:(NSString *)deviceUId) {
  * 多次调用 trackTimerPause: 时，以首次调用为准。
  * @param event 事件名称或事件的 eventId
  *
- * RN 中使用示例：
- *
- *  <Button
- *  title="Button"
- *  onPress={()=>
- *  RNHinaReactNativeLib.trackTimerPause("event")}>
- *  </Button>
  */
 RCT_EXPORT_METHOD(trackTimerPause:(NSString *)event){
     @try {
@@ -714,13 +567,6 @@ RCT_EXPORT_METHOD(trackTimerPause:(NSString *)event){
  * 多次调用 trackTimerResume: 时，以首次调用为准。
  * @param event 事件名称或事件的 eventId
  *
- * RN 中使用示例：
- *
- *  <Button
- *  title="Button"
- *  onPress={()=>
- *  RNHinaReactNativeLib.trackTimerResume("event")}>
- *  </Button>
  */
 RCT_EXPORT_METHOD(trackTimerResume:(NSString *)event){
     @try {
@@ -740,13 +586,6 @@ RCT_EXPORT_METHOD(trackTimerResume:(NSString *)event){
  * @param pushTypeKey  pushId 的 key
  * @param pushId  pushId 的值
  *
- *  RN 中使用示例：
- *
- *  <Button
- *  title="Button"
- *  onPress={()=>
- *  RNHinaReactNativeLib.profilePushId("pushTypeKey", "pushId")}>
- *  </Button>
  */
 RCT_EXPORT_METHOD(profilePushId:(NSString *)pushTypeKey pushId:(NSString *)pushId){
     @try {
@@ -766,12 +605,6 @@ RCT_EXPORT_METHOD(profilePushId:(NSString *)pushTypeKey pushId:(NSString *)pushI
  * 当 disctinct_id 未找到本地缓存记录时, 不会触发 profileUnset。
  * @param pushTypeKey  pushId 的 key
  *
- *  RN 中使用示例：
- *  <Button
- *  title="Button"
- *  onPress={()=>
- *  RNHinaReactNativeLib.profileUnsetPushId("pushTypeKey")}>
- *  </Button>
  */
 RCT_EXPORT_METHOD(profileUnsetPushId:(NSString *)pushTypeKey) {
     @try {
@@ -786,12 +619,6 @@ RCT_EXPORT_METHOD(profileUnsetPushId:(NSString *)pushTypeKey) {
  * @abstract
  * 重置默认匿名 id
  *
- *  RN 中使用示例：
- *  <Button
- *  title="Button"
- *  onPress={()=>
- *  RNHinaReactNativeLib.resetAnonymousId()}>
- *  </Button>
  */
 RCT_EXPORT_METHOD(resetAnonymousId) {
     @try {
@@ -807,12 +634,6 @@ RCT_EXPORT_METHOD(resetAnonymousId) {
  *
  * @return 当前的 superProperty 的副本
  *
- *  RN 中使用示例：
- *  <Button
- *  title="Button"
- *  onPress={()=>
- *  RNHinaReactNativeLib.getSuperPropertiesPromise().then((value) => { // value 为获取到的公共属性  })}>
- *  </Button>
  */
 RCT_EXPORT_METHOD(getSuperPropertiesPromise:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject) {
     @try {
@@ -828,11 +649,6 @@ RCT_EXPORT_METHOD(getSuperPropertiesPromise:(RCTPromiseResolveBlock)resolve reje
  * 设置当前 serverUrl
  *
  *  RN 中使用示例：
- *  <Button
- *  title="Button"
- *  onPress={()=>
- *  RNHinaReactNativeLib.setServerUrl("https://www.hn.cn") }>
- *  </Button>
  */
 RCT_EXPORT_METHOD(setServerUrl:(NSString *)serverUrl) {
     @try {
@@ -848,12 +664,6 @@ RCT_EXPORT_METHOD(setServerUrl:(NSString *)serverUrl) {
  * @param itemId item Id
  * @param propertyDict item 相关属性
  *
- *  RN 中使用示例：
- *  <Button
- *  title="Button"
- *  onPress={()=>
- *  RNHinaReactNativeLib.itemSet('itemType', 'itemId', { 'key' : 'value' }) }>
- *  </Button>
  */
 RCT_EXPORT_METHOD(itemSet:(NSString *)itemType itemId:(NSString *)itemId properties:(nullable NSDictionary <NSString *, id> *)propertyDict) {
     @try {
@@ -869,12 +679,6 @@ RCT_EXPORT_METHOD(itemSet:(NSString *)itemType itemId:(NSString *)itemId propert
  * @param itemType item 类型
  * @param itemId item Id
  *
- *  RN 中使用示例：
- *  <Button
- *  title="Button"
- *  onPress={()=>
- *  RNHinaReactNativeLib.itemDelete('itemType', 'itemId') }>
- *  </Button>
  */
 RCT_EXPORT_METHOD(itemDelete:(NSString *)itemType itemId:(NSString *)itemId) {
     @try {
@@ -890,12 +694,6 @@ RCT_EXPORT_METHOD(itemDelete:(NSString *)itemType itemId:(NSString *)itemId) {
  *
  * @return NSDictionary 返回预置的属性
  *
- *  RN 中使用示例：
- *  <Button
- *  title="Button"
- *  onPress={()=>
- *  RNHinaReactNativeLib.getPresetPropertiesPromise().then((value) => { // value 为获取到的预置属性  }) }>
- *  </Button>
  */
 RCT_EXPORT_METHOD(getPresetPropertiesPromise:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject) {
     @try {
@@ -916,12 +714,6 @@ RCT_EXPORT_METHOD(getPresetPropertiesPromise:(RCTPromiseResolveBlock)resolve rej
  * TYPE_ALL = 0xFF;     // ALL       255
  * 例：若需要开启 4G WIFI 发送数据，则需要设置 4 + 8 = 12
  *
- *  RN 中使用示例：
- *  <Button
- *  title="Button"
- *  onPress={()=>
- *  RNHinaReactNativeLib.setFlushNetworkPolicy( 20 ) }>
- *  </Button>
  */
 RCT_EXPORT_METHOD(setFlushNetworkPolicy:(NSInteger)networkType) {
     @try {
