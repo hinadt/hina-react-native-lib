@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   s.source_files = "ios/*.{h,m}"
   s.requires_arc = true
   s.dependency   "React"
-  s.dependency   "HinaCloudSDK", ">= 4.0.1"
+  s.dependency   "HinaCloudSDK", ">= 4.0.6"
 
 end
