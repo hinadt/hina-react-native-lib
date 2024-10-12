@@ -114,6 +114,20 @@ RCT_EXPORT_METHOD(setUserUId:(NSString *)loginId){
     }
 }
 /**
+ * 导出 getUserUId 方法给 RN 使用.
+ *
+ * @param getUserUId 用户唯一下登录ID
+ *
+ */
+RCT_EXPORT_METHOD(getUserUId:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject){
+    @try {
+        resolve([HinaCloudSDK sharedInstance].userUId);
+    } @catch (NSException *exception) {
+        NSLog(@"[RNHinaCloud] error:%@",exception);
+    }
+}
+
+/**
  * 导出 cleanUserUId 方法给 RN 使用.
  *
  */
